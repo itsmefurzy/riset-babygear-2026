@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sewa Perlengkapan Bayi &amp; Mom-Care — riset &amp; strategi masuk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F0E8;
+  --surface:#FFFCF6;
+  --ink:#161A1D;
+  --ink-soft:#2E3439;
+  --muted:#6C6A64;
+  --rule:#DCD3C3;
+  --rule-soft:#E8E1D4;
+  --accent:#96482C;
+  --accent-soft:#B76B49;
+  --ok:#3F6B4A;
+  --warn:#8A5A16;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --rail:264px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:18px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  font-optical-sizing:auto;
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* ---------- progress ---------- */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:60}
+
+/* ---------- shell ---------- */
+.shell{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);min-height:100vh}
+
+/* ---------- rail ---------- */
+.rail{
+  border-right:1px solid var(--rule);background:var(--paper);
+  position:sticky;top:0;height:100vh;display:flex;flex-direction:column;
+}
+.rail-inner{padding:28px 22px 20px;overflow-y:auto;flex:1;scrollbar-width:thin}
+.mark{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.rail h1{font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.22;margin:0 0 6px;letter-spacing:-.01em}
+.rail .deck{font-family:var(--sans);font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 20px}
+.filter{width:100%;font-family:var(--sans);font-size:12px;padding:7px 9px;border:1px solid var(--rule);
+  background:var(--surface);color:var(--ink);border-radius:2px;margin-bottom:16px}
+.filter:focus{outline:2px solid var(--accent);outline-offset:1px}
+.filter::placeholder{color:#9A968C}
+nav{display:block}
+.nav-ch,.nav-sub{display:block;text-decoration:none;border-left:2px solid transparent}
+.nav-ch{
+  font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--ink-soft);
+  padding:5px 0 5px 10px;line-height:1.35;margin-top:2px;
+}
+.nav-ch .nav-num{font-family:var(--mono);font-size:10.5px;color:var(--accent);margin-right:7px}
+.nav-sub{
+  font-family:var(--sans);font-size:11.5px;color:var(--muted);padding:3px 0 3px 24px;line-height:1.35;
+}
+.nav-ch:hover,.nav-sub:hover{color:var(--ink)}
+.nav-ch:hover .nav-num{color:var(--accent-soft)}
+.nav-ch.active,.nav-sub.active{color:var(--ink);border-left-color:var(--accent)}
+.nav-ch.active{font-weight:600}
+.nav-sub:first-of-type{margin-top:0}
+.rail-foot{
+  border-top:1px solid var(--rule);padding:12px 22px;font-family:var(--sans);font-size:10.5px;
+  color:var(--muted);line-height:1.5;display:flex;justify-content:space-between;gap:8px
+}
+
+/* ---------- article ---------- */
+main{min-width:0}
+article{max-width:70ch;margin:0 auto;padding:0 clamp(24px,5vw,64px)}
+
+/* cover */
+.cover{max-width:70ch;margin:0 auto;padding:clamp(48px,9vh,110px) clamp(24px,5vw,64px) 40px}
+.cover .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+.cover h1{
+  font-family:var(--serif);font-weight:400;font-size:clamp(38px,6vw,62px);line-height:1.04;
+  letter-spacing:-.02em;margin:0 0 22px;text-wrap:balance;
+}
+.cover .lede{font-size:20px;line-height:1.5;color:var(--ink-soft);margin:0 0 26px;max-width:54ch}
+.cover dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 26px;
+  margin:30px 0 0;padding-top:22px;border-top:1px solid var(--rule)}
+.cover dt{font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.cover dd{margin:0;font-family:var(--sans);font-size:13px;line-height:1.45}
+
+/* chapter */
+.chapter{padding:0 0 4px}
+.chapter + .chapter{margin-top:26px}
+.chapter-head{display:flex;align-items:baseline;gap:16px;padding:34px 0 6px;border-top:1px solid var(--rule);margin-bottom:14px}
+.chapter-num{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.06em}
+.chapter-head h2{
+  font-family:var(--serif);font-weight:500;font-size:clamp(25px,3.2vw,33px);line-height:1.18;
+  letter-spacing:-.015em;margin:0;text-wrap:balance;
+}
+h3{
+  font-family:var(--sans);font-weight:600;font-size:15px;line-height:1.4;color:var(--ink);
+  margin:34px 0 8px;letter-spacing:-.005em
+}
+p{margin:0 0 15px;text-wrap:pretty;hyphens:auto}
+strong{font-weight:600}
+em{font-style:italic}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(150,72,44,.32)}
+a:hover{border-bottom-color:var(--accent)}
+code{
+  font-family:var(--mono);font-size:.82em;background:#EDE7DA;color:#5A3A22;
+  padding:1px 4px;border-radius:2px
+}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:0 0 6px;line-height:1.55}
+li::marker{color:var(--accent);font-family:var(--mono);font-size:.85em}
+.check{padding-left:22px;position:relative;color:var(--ink-soft)}
+.check::before{content:"☐";position:absolute;left:0;top:-1px;color:var(--muted);font-size:15px}
+hr.rule{border:0;border-top:1px solid var(--rule);margin:34px 0}
+
+/* tables */
+.table-wrap{margin:20px 0 26px;overflow-x:auto;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:12.5px;line-height:1.42}
+th{
+  text-align:left;font-weight:600;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);padding:9px 12px 8px;border-bottom:1px solid var(--rule);vertical-align:bottom
+}
+td{padding:8px 12px;border-bottom:1px solid #E4DCCD;vertical-align:top;font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:rgba(150,72,44,.035)}
+td:first-child{color:var(--ink)}
+table code{background:none;padding:0;color:inherit;font-size:12px}
+
+/* notes: label + hairline, no accent rail */
+.note{margin:22px 0;padding-top:9px;border-top:1px solid var(--accent);max-width:62ch}
+.note-label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.note p{margin:0;font-size:16.5px;line-height:1.55;color:var(--ink-soft)}
+
+/* ---------- calculator ---------- */
+.instrument{margin:38px 0 8px;border:1px solid var(--rule);background:var(--surface)}
+.instrument-head{padding:20px 22px 16px;border-bottom:1px solid var(--rule)}
+.instrument-head .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.instrument-head h3{font-family:var(--serif);font-weight:500;font-size:23px;margin:6px 0 6px;letter-spacing:-.01em}
+.instrument-head p{font-family:var(--sans);font-size:12.5px;line-height:1.5;color:var(--muted);margin:0;max-width:60ch}
+.gi{border-bottom:1px solid var(--rule)}
+.gi-row{display:grid;gap:0}
+.gi-row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gi-row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gi-row.one{grid-template-columns:minmax(0,1fr)}
+.gi-row > .field:last-child{border-right:0}
+@media (max-width:760px){
+  .gi-row.three,.gi-row.two{grid-template-columns:1fr}
+  .gi-row > .field{border-right:0}
+}
+.field.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);column-gap:6px;align-items:end}
+.field.wide input{grid-column:1}
+.grp{grid-column:1/-1;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);background:#FAF6EC;padding:8px 22px 7px;border-bottom:1px solid var(--rule-soft);
+  border-right:0}
+.field{padding:13px 22px;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);
+  display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:5px;align-items:end}
+.field label{grid-column:1/-1;display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.field input{
+  grid-column:2;width:100%;min-width:0;font-family:var(--mono);font-size:15px;color:var(--ink);
+  background:transparent;border:0;border-bottom:1px solid var(--rule);padding:3px 0 2px;border-radius:0;
+  font-variant-numeric:tabular-nums;text-align:right
+}
+.field input:focus{outline:0;border-bottom-color:var(--accent)}
+.field .unit{grid-column:1;align-self:end;font-family:var(--mono);font-size:10px;color:#9A968C;padding-bottom:5px;line-height:1}
+.field .unit:empty{display:none}
+.band-label{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  background:#EDE4CF;padding:9px 22px;border-top:1.5px solid var(--ink)
+}
+.band-label span{font-family:var(--sans);font-size:10.5px;letter-spacing:0;text-transform:none;color:var(--muted)}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));border-bottom:1px solid var(--rule);
+  background:#EDE4CF}
+.res{padding:18px 22px;border-right:1px solid var(--rule-soft);display:flex;flex-direction:column;justify-content:space-between}
+.res:last-child{border-right:0}
+.res .k{font-family:var(--sans);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.res .v{font-family:var(--mono);font-size:23px;line-height:1.1;letter-spacing:-.02em;text-align:right;
+  font-variant-numeric:tabular-nums}
+.res .v small{font-size:11px;color:var(--muted);letter-spacing:0}
+.verdict{padding:16px 22px;font-family:var(--sans);font-size:13.5px;line-height:1.6;display:flex;gap:11px;align-items:flex-start;background:var(--surface)}
+.verdict b{font-weight:600}
+.verdict .caveat{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
+.verdict .dot{flex:0 0 auto;width:7px;height:7px;border-radius:50%;margin-top:6px;background:var(--muted)}
+.verdict[data-state="ok"] .dot{background:var(--ok)}
+.verdict[data-state="warn"] .dot{background:var(--warn)}
+.verdict[data-state="bad"] .dot{background:var(--accent)}
+.bar-wrap{padding:0 22px 18px}
+.bar{position:relative;height:5px;background:var(--rule-soft)}
+.bar .fill{position:absolute;inset:0 auto 0 0;background:var(--ink-soft)}
+.bar .be{position:absolute;top:-4px;width:2px;height:13px;background:var(--accent)}
+.bar-legend{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:7px}
+.inst-actions{display:flex;gap:10px;padding:14px 22px;border-top:1px solid var(--rule);align-items:center;flex-wrap:wrap}
+.inst-actions .hint{flex:1 1 auto;text-align:right}
+.btn{
+  font-family:var(--sans);font-size:12px;padding:0 14px;height:38px;display:inline-flex;align-items:center;
+  white-space:nowrap;border:1px solid var(--ink);
+  background:var(--ink);color:var(--paper);cursor:pointer;border-radius:2px
+}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost:hover{background:transparent;color:var(--accent);border-color:var(--accent)}
+.hint{font-family:var(--sans);font-size:11px;color:var(--muted);margin-left:auto}
+
+/* footer */
+.colophon{max-width:70ch;margin:0 auto;padding:34px clamp(24px,5vw,64px) 80px;border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:11.5px;line-height:1.6;color:var(--muted)}
+.colophon strong{color:var(--ink)}
+
+/* mobile */
+.mobile-bar{display:none}
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;z-index:50;
+    transform:translateX(-102%);transition:transform .22s ease;box-shadow:0 0 40px rgba(0,0,0,.12)}
+  .rail.open{transform:none}
+  .mobile-bar{
+    display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:40;
+    padding:10px 16px;background:rgba(244,240,232,.94);border-bottom:1px solid var(--rule);
+    backdrop-filter:none
+  }
+  .mobile-bar button{font-family:var(--sans);font-size:12px;border:1px solid var(--rule);background:var(--surface);
+    padding:8px 12px;min-height:40px;border-radius:2px}
+  .mobile-bar .title{font-family:var(--sans);font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .scrim{position:fixed;inset:0;background:rgba(22,26,29,.28);z-index:45;display:none}
+  .scrim.show{display:block}
+  article,.cover{padding-left:20px;padding-right:20px}
+  body{font-size:17px}
+}
+@media print{
+  .rail,.mobile-bar,#progress,.inst-actions{display:none!important}
+  .shell{display:block}
+  body{background:#fff;font-size:10.5pt}
+  .chapter-head{border-top:1px solid #ccc;break-after:avoid}
+  h3{break-after:avoid}
+  .table-wrap{break-inside:avoid}
+  .instrument{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="mobile-bar">
+  <button id="menu-btn" aria-expanded="false" aria-controls="rail">Isi</button>
+  <span class="title">Sewa perlengkapan bayi — riset &amp; strategi</span>
+</div>
+<div class="scrim" id="scrim"></div>
+
+<div class="shell">
+  <aside class="rail" id="rail" aria-label="Daftar isi">
+    <div class="rail-inner">
+      <p class="mark">Dineshcara / riset</p>
+      <h1>Sewa perlengkapan bayi &amp; mom-care</h1>
+      <p class="deck">Peta pasar, pola menang lima operator, ekonomi unit, dan rencana masuk 90 hari.</p>
+      <input class="filter" id="nav-filter" type="search" placeholder="Saring bab…  (tekan /)" aria-label="Saring bab">
+      <nav id="toc">
+<a class="nav-ch" href="#ch-1-kesimpulan-di-depan" data-target="ch-1-kesimpulan-di-depan"><span class="nav-num">1</span>Kesimpulan di depan</a>
+<a class="nav-ch" href="#ch-2-peta-pasar-dan-di-mana-lubangnya" data-target="ch-2-peta-pasar-dan-di-mana-lubangnya"><span class="nav-num">2</span>Peta pasar dan di mana lubangnya</a>
+<a class="nav-sub" href="#2-1-struktur-terfragmentasi-tanpa-pemimpin-kategori" data-target="2-1-struktur-terfragmentasi-tanpa-pemimpin-kategori">2.1 Struktur: terfragmentasi, tanpa pemimpin kategori</a>
+<a class="nav-sub" href="#2-2-dua-arsitektur-harga-dua-ekonomi" data-target="2-2-dua-arsitektur-harga-dua-ekonomi">2.2 Dua arsitektur harga, dua ekonomi</a>
+<a class="nav-sub" href="#2-3-di-mana-lubangnya" data-target="2-3-di-mana-lubangnya">2.3 Di mana lubangnya</a>
+<a class="nav-ch" href="#ch-3-anatomi-permintaan-siapa-beli-kapan-kenapa-berapa-kali" data-target="ch-3-anatomi-permintaan-siapa-beli-kapan-kenapa-berapa-kali"><span class="nav-num">3</span>Anatomi permintaan: siapa beli, kapan, kenapa, berapa kali</a>
+<a class="nav-sub" href="#3-1-persona-a-ibu-menyusui-yang-butuh-pompa-asi" data-target="3-1-persona-a-ibu-menyusui-yang-butuh-pompa-asi">3.1 Persona A: Ibu menyusui yang butuh pompa ASI</a>
+<a class="nav-sub" href="#3-2-persona-b-keluarga-yang-bepergian-sering-dadakan" data-target="3-2-persona-b-keluarga-yang-bepergian-sering-dadakan">3.2 Persona B: Keluarga yang bepergian, sering dadakan</a>
+<a class="nav-sub" href="#3-3-persona-c-orang-tua-bayi-baru-yang-menyiapkan-nursery" data-target="3-3-persona-c-orang-tua-bayi-baru-yang-menyiapkan-nursery">3.3 Persona C: Orang tua bayi baru yang menyiapkan nursery</a>
+<a class="nav-sub" href="#3-4-persona-d-pembeli-b2b-dan-event" data-target="3-4-persona-d-pembeli-b2b-dan-event">3.4 Persona D: Pembeli B2B dan event</a>
+<a class="nav-sub" href="#3-5-ringkasan-persona" data-target="3-5-ringkasan-persona">3.5 Ringkasan persona</a>
+<a class="nav-ch" href="#ch-4-studi-kasus-pertumbuhan-5-operator-mekanisme-naiknya" data-target="ch-4-studi-kasus-pertumbuhan-5-operator-mekanisme-naiknya"><span class="nav-num">4</span>Studi kasus pertumbuhan: 5 operator, mekanisme naiknya</a>
+<a class="nav-sub" href="#4-1-zaida-rental-aset-sendiri-lalu-aset-orang-lain-lalu-even" data-target="4-1-zaida-rental-aset-sendiri-lalu-aset-orang-lain-lalu-even">4.1 Zaida Rental: aset sendiri, lalu aset orang lain, lalu event</a>
+<a class="nav-sub" href="#4-2-cancan-baby-kualitas-sebagai-satu-satunya-positioning" data-target="4-2-cancan-baby-kualitas-sebagai-satu-satunya-positioning">4.2 Cancan Baby: kualitas sebagai satu-satunya positioning</a>
+<a class="nav-sub" href="#4-3-kiddy-id-sistem-dan-katalog-bukan-gudang" data-target="4-3-kiddy-id-sistem-dan-katalog-bukan-gudang">4.3 Kiddy.id: sistem dan katalog, bukan gudang</a>
+<a class="nav-sub" href="#4-4-mamasewa-konten-lalu-badan-hukum-lalu-ekspansi-lewat-sub" data-target="4-4-mamasewa-konten-lalu-badan-hukum-lalu-ekspansi-lewat-sub">4.4 Mamasewa: konten, lalu badan hukum, lalu ekspansi lewat subdomain</a>
+<a class="nav-sub" href="#4-5-patta-menyerang-celah-durasi" data-target="4-5-patta-menyerang-celah-durasi">4.5 Patta: menyerang celah durasi</a>
+<a class="nav-sub" href="#4-6-perbandingan-mekanisme" data-target="4-6-perbandingan-mekanisme">4.6 Perbandingan mekanisme</a>
+<a class="nav-ch" href="#ch-5-delapan-pola-menang-dan-mekanismenya" data-target="ch-5-delapan-pola-menang-dan-mekanismenya"><span class="nav-num">5</span>Delapan pola menang dan mekanismenya</a>
+<a class="nav-sub" href="#5-1-founder-market-fit-dari-luka-sendiri" data-target="5-1-founder-market-fit-dari-luka-sendiri">5.1 Founder-market fit dari luka sendiri</a>
+<a class="nav-sub" href="#5-2-armada-dari-aset-orang-lain-penitip-50-50" data-target="5-2-armada-dari-aset-orang-lain-penitip-50-50">5.2 Armada dari aset orang lain (penitip 50:50)</a>
+<a class="nav-sub" href="#5-3-higiene-sebagai-produk-bukan-sop" data-target="5-3-higiene-sebagai-produk-bukan-sop">5.3 Higiene sebagai produk, bukan SOP</a>
+<a class="nav-sub" href="#5-4-arsitektur-durasi-ganda" data-target="5-4-arsitektur-durasi-ganda">5.4 Arsitektur durasi ganda</a>
+<a class="nav-sub" href="#5-5-ekspansi-kota-lewat-seo-geo-dan-mitra-lokal" data-target="5-5-ekspansi-kota-lewat-seo-geo-dan-mitra-lokal">5.5 Ekspansi kota lewat SEO geo dan mitra lokal</a>
+<a class="nav-sub" href="#5-6-b2b-dan-event-sebagai-lonjakan-laba" data-target="5-6-b2b-dan-event-sebagai-lonjakan-laba">5.6 B2B dan event sebagai lonjakan laba</a>
+<a class="nav-sub" href="#5-7-kanal-dibagi-per-fungsi" data-target="5-7-kanal-dibagi-per-fungsi">5.7 Kanal dibagi per fungsi</a>
+<a class="nav-sub" href="#5-8-lini-kedua-dari-aset-yang-sama" data-target="5-8-lini-kedua-dari-aset-yang-sama">5.8 Lini kedua dari aset yang sama</a>
+<a class="nav-ch" href="#ch-6-pola-gagal-dan-cara-kerjanya-membunuh-bisnis" data-target="ch-6-pola-gagal-dan-cara-kerjanya-membunuh-bisnis"><span class="nav-num">6</span>Pola gagal dan cara kerjanya membunuh bisnis</a>
+<a class="nav-sub" href="#6-1-okupansi-di-bawah-67-modal-mati-di-rak" data-target="6-1-okupansi-di-bawah-67-modal-mati-di-rak">6.1 Okupansi di bawah 67%: modal mati di rak</a>
+<a class="nav-sub" href="#6-2-membeli-sku-dengan-payback-buruk" data-target="6-2-membeli-sku-dengan-payback-buruk">6.2 Membeli SKU dengan payback buruk</a>
+<a class="nav-sub" href="#6-3-ketergantungan-travel-satu-guncangan-pendapatan-nol" data-target="6-3-ketergantungan-travel-satu-guncangan-pendapatan-nol">6.3 Ketergantungan travel: satu guncangan, pendapatan nol</a>
+<a class="nav-sub" href="#6-4-kapasitas-antar-sebagai-plafon" data-target="6-4-kapasitas-antar-sebagai-plafon">6.4 Kapasitas antar sebagai plafon</a>
+<a class="nav-sub" href="#6-5-jaminan-terlalu-tipis-satu-kehilangan-menghapus-berbulan" data-target="6-5-jaminan-terlalu-tipis-satu-kehilangan-menghapus-berbulan">6.5 Jaminan terlalu tipis: satu kehilangan menghapus berbulan-bulan laba</a>
+<a class="nav-sub" href="#6-6-perang-harga-di-kota-padat" data-target="6-6-perang-harga-di-kota-padat">6.6 Perang harga di kota padat</a>
+<a class="nav-sub" href="#6-7-katalog-tanpa-sistem" data-target="6-7-katalog-tanpa-sistem">6.7 Katalog tanpa sistem</a>
+<a class="nav-sub" href="#6-8-ringkasan-pola-gagal" data-target="6-8-ringkasan-pola-gagal">6.8 Ringkasan pola gagal</a>
+<a class="nav-ch" href="#ch-7-ekonomi-unit-hitungan-lengkap-dan-sensitivitas" data-target="ch-7-ekonomi-unit-hitungan-lengkap-dan-sensitivitas"><span class="nav-num">7</span>Ekonomi unit: hitungan lengkap dan sensitivitas</a>
+<a class="nav-sub" href="#7-1-asumsi-yang-dipakai-di-bab-7-9" data-target="7-1-asumsi-yang-dipakai-di-bab-7-9">7.1 Asumsi yang dipakai di bab 7–9</a>
+<a class="nav-sub" href="#7-2-ekonomi-per-sku" data-target="7-2-ekonomi-per-sku">7.2 Ekonomi per SKU</a>
+<a class="nav-sub" href="#7-3-armada-15-unit-dari-mana-breakeven-67-71" data-target="7-3-armada-15-unit-dari-mana-breakeven-67-71">7.3 Armada 15 unit: dari mana breakeven 67–71%</a>
+<a class="nav-sub" href="#7-4-sensitivitas-biaya-antar-per-booking" data-target="7-4-sensitivitas-biaya-antar-per-booking">7.4 Sensitivitas biaya antar per booking</a>
+<a class="nav-sub" href="#7-5-sensitivitas-durasi-sewa" data-target="7-5-sensitivitas-durasi-sewa">7.5 Sensitivitas durasi sewa</a>
+<a class="nav-sub" href="#7-6-kenapa-biaya-tetap-mengubah-segalanya" data-target="7-6-kenapa-biaya-tetap-mengubah-segalanya">7.6 Kenapa biaya tetap mengubah segalanya</a>
+<a class="nav-sub" href="#7-7-penitip-50-50-bagi-apa-dan-kenapa-itu-penting" data-target="7-7-penitip-50-50-bagi-apa-dan-kenapa-itu-penting">7.7 Penitip 50:50: bagi apa, dan kenapa itu penting</a>
+<a class="nav-ch" href="#ch-8-arsitektur-harga-tangga-harga-konkret-per-produk" data-target="ch-8-arsitektur-harga-tangga-harga-konkret-per-produk"><span class="nav-num">8</span>Arsitektur harga: tangga harga konkret per produk</a>
+<a class="nav-sub" href="#8-1-tangga-harga" data-target="8-1-tangga-harga">8.1 Tangga harga</a>
+<a class="nav-sub" href="#8-2-margin-per-booking-dan-lantai-harga" data-target="8-2-margin-per-booking-dan-lantai-harga">8.2 Margin per booking dan lantai harga</a>
+<a class="nav-sub" href="#8-3-alasan-psikologis-di-balik-angkanya" data-target="8-3-alasan-psikologis-di-balik-angkanya">8.3 Alasan psikologis di balik angkanya</a>
+<a class="nav-sub" href="#8-4-pola-menang-arsitektur-durasi-ganda" data-target="8-4-pola-menang-arsitektur-durasi-ganda">8.4 Pola menang: arsitektur durasi ganda</a>
+<a class="nav-sub" href="#8-5-aturan-diskon-yang-tidak-boleh-dilanggar" data-target="8-5-aturan-diskon-yang-tidak-boleh-dilanggar">8.5 Aturan diskon yang tidak boleh dilanggar</a>
+<a class="nav-ch" href="#ch-9-tiga-skenario-keuangan-12-bulan" data-target="ch-9-tiga-skenario-keuangan-12-bulan"><span class="nav-num">9</span>Tiga skenario keuangan 12 bulan</a>
+<a class="nav-sub" href="#9-1-mesin-hitungnya" data-target="9-1-mesin-hitungnya">9.1 Mesin hitungnya</a>
+<a class="nav-sub" href="#9-2-bear-okupansi-macet-di-bawah-60" data-target="9-2-bear-okupansi-macet-di-bawah-60">9.2 Bear: okupansi macet di bawah 60%</a>
+<a class="nav-sub" href="#9-3-base-okupansi-naik-pelan" data-target="9-3-base-okupansi-naik-pelan">9.3 Base: okupansi naik pelan</a>
+<a class="nav-sub" href="#9-4-bull-satu-event-besar-di-kuartal-kedua" data-target="9-4-bull-satu-event-besar-di-kuartal-kedua">9.4 Bull: satu event besar di kuartal kedua</a>
+<a class="nav-sub" href="#9-5-cara-membaca-tiga-skenario-itu" data-target="9-5-cara-membaca-tiga-skenario-itu">9.5 Cara membaca tiga skenario itu</a>
+<a class="nav-ch" href="#ch-10-rencana-masuk-wedge-tunggal-90-hari-per-fase" data-target="ch-10-rencana-masuk-wedge-tunggal-90-hari-per-fase"><span class="nav-num">10</span>Rencana masuk: wedge tunggal, 90 hari per fase</a>
+<a class="nav-sub" href="#10-1-wedge-satu-kota-satu-komposisi-armada" data-target="10-1-wedge-satu-kota-satu-komposisi-armada">10.1 Wedge: satu kota, satu komposisi armada</a>
+<a class="nav-sub" href="#10-2-fase-0-hari-14-sampai-0-persiapan-sebelum-uang-keluar" data-target="10-2-fase-0-hari-14-sampai-0-persiapan-sebelum-uang-keluar">10.2 Fase 0 (hari -14 sampai 0): persiapan sebelum uang keluar</a>
+<a class="nav-sub" href="#10-3-fase-1-hari-1-30-bukti-pertama" data-target="10-3-fase-1-hari-1-30-bukti-pertama">10.3 Fase 1 (hari 1-30): bukti pertama</a>
+<a class="nav-sub" href="#10-4-fase-2-hari-31-60-perbaiki-durasi-bukan-tambah-unit" data-target="10-4-fase-2-hari-31-60-perbaiki-durasi-bukan-tambah-unit">10.4 Fase 2 (hari 31-60): perbaiki durasi, bukan tambah unit</a>
+<a class="nav-sub" href="#10-5-fase-3-hari-61-90-baru-boleh-menambah" data-target="10-5-fase-3-hari-61-90-baru-boleh-menambah">10.5 Fase 3 (hari 61-90): baru boleh menambah</a>
+<a class="nav-sub" href="#10-6-yang-diukur-tiap-akhir-fase" data-target="10-6-yang-diukur-tiap-akhir-fase">10.6 Yang diukur tiap akhir fase</a>
+<a class="nav-ch" href="#ch-11-modal-awal-rincian-belanja-per-item-bukan-angka-bulat" data-target="ch-11-modal-awal-rincian-belanja-per-item-bukan-angka-bulat"><span class="nav-num">11</span>Modal awal: rincian belanja per item, bukan angka bulat</a>
+<a class="nav-sub" href="#11-1-armada" data-target="11-1-armada">11.1 Armada</a>
+<a class="nav-sub" href="#11-2-koreksi-komposisi-box-bayi-jangan-dibeli" data-target="11-2-koreksi-komposisi-box-bayi-jangan-dibeli">11.2 Koreksi komposisi: box bayi jangan dibeli</a>
+<a class="nav-sub" href="#11-3-non-armada" data-target="11-3-non-armada">11.3 Non-armada</a>
+<a class="nav-sub" href="#11-4-modal-kerja" data-target="11-4-modal-kerja">11.4 Modal kerja</a>
+<a class="nav-sub" href="#11-5-total" data-target="11-5-total">11.5 Total</a>
+<a class="nav-ch" href="#ch-12-operasi-sop-higiene-kontrak-deposit-kerusakan-kehilang" data-target="ch-12-operasi-sop-higiene-kontrak-deposit-kerusakan-kehilang"><span class="nav-num">12</span>Operasi: SOP higiene, kontrak, deposit, kerusakan, kehilangan, kapasitas antar</a>
+<a class="nav-sub" href="#12-1-higiene-adalah-produk" data-target="12-1-higiene-adalah-produk">12.1 Higiene adalah produk</a>
+<a class="nav-sub" href="#12-2-kontrak" data-target="12-2-kontrak">12.2 Kontrak</a>
+<a class="nav-sub" href="#12-3-deposit-tiering-berdasarkan-nilai-barang" data-target="12-3-deposit-tiering-berdasarkan-nilai-barang">12.3 Deposit: tiering berdasarkan nilai barang</a>
+<a class="nav-sub" href="#12-4-kerusakan-dan-kehilangan" data-target="12-4-kerusakan-dan-kehilangan">12.4 Kerusakan dan kehilangan</a>
+<a class="nav-sub" href="#12-5-kapasitas-antar" data-target="12-5-kapasitas-antar">12.5 Kapasitas antar</a>
+<a class="nav-sub" href="#12-6-penitip-50-50-cek-dulu-angkanya" data-target="12-6-penitip-50-50-cek-dulu-angkanya">12.6 Penitip 50:50: cek dulu angkanya</a>
+<a class="nav-ch" href="#ch-13-mesin-akuisisi-konten-autobase-marketplace-b2b-anchor" data-target="ch-13-mesin-akuisisi-konten-autobase-marketplace-b2b-anchor"><span class="nav-num">13</span>Mesin akuisisi: konten, autobase, marketplace, B2B anchor</a>
+<a class="nav-sub" href="#13-1-konten-ig-tiktok-kanal-closing" data-target="13-1-konten-ig-tiktok-kanal-closing">13.1 Konten IG/TikTok: kanal closing</a>
+<a class="nav-sub" href="#13-2-autobase-x-dan-grup-fb-lokal-demand-capture" data-target="13-2-autobase-x-dan-grup-fb-lokal-demand-capture">13.2 Autobase X dan grup FB lokal: demand capture</a>
+<a class="nav-sub" href="#13-3-marketplace-permintaan-tambahan" data-target="13-3-marketplace-permintaan-tambahan">13.3 Marketplace: permintaan tambahan</a>
+<a class="nav-sub" href="#13-4-b2b-anchor-satu-per-kuartal" data-target="13-4-b2b-anchor-satu-per-kuartal">13.4 B2B anchor: satu per kuartal</a>
+<a class="nav-sub" href="#13-5-pers" data-target="13-5-pers">13.5 Pers</a>
+<a class="nav-ch" href="#ch-14-organisasi-dan-biaya-tetap-dari-0-sampai-12-bulan" data-target="ch-14-organisasi-dan-biaya-tetap-dari-0-sampai-12-bulan"><span class="nav-num">14</span>Organisasi dan biaya tetap dari 0 sampai 12 bulan</a>
+<a class="nav-sub" href="#14-1-bulan-0-3-dua-peran-inti" data-target="14-1-bulan-0-3-dua-peran-inti">14.1 Bulan 0–3: dua peran inti</a>
+<a class="nav-sub" href="#14-2-bulan-4-6-tambah-kapasitas-bukan-kepala" data-target="14-2-bulan-4-6-tambah-kapasitas-bukan-kepala">14.2 Bulan 4–6: tambah kapasitas, bukan kepala</a>
+<a class="nav-sub" href="#14-3-bulan-7-12-staf-penuh-waktu-pertama" data-target="14-3-bulan-7-12-staf-penuh-waktu-pertama">14.3 Bulan 7–12: staf penuh waktu pertama</a>
+<a class="nav-sub" href="#14-4-yang-tidak-boleh-terjadi" data-target="14-4-yang-tidak-boleh-terjadi">14.4 Yang tidak boleh terjadi</a>
+<a class="nav-ch" href="#ch-15-dashboard-kpi-dan-kill-criteria" data-target="ch-15-dashboard-kpi-dan-kill-criteria"><span class="nav-num">15</span>Dashboard KPI dan kill criteria</a>
+<a class="nav-sub" href="#15-1-dashboard-mingguan" data-target="15-1-dashboard-mingguan">15.1 Dashboard mingguan</a>
+<a class="nav-sub" href="#15-2-kill-criteria" data-target="15-2-kill-criteria">15.2 Kill criteria</a>
+<a class="nav-ch" href="#ch-16-risiko-dan-mitigasi-termasuk-risiko-yang-tidak-bisa-di" data-target="ch-16-risiko-dan-mitigasi-termasuk-risiko-yang-tidak-bisa-di"><span class="nav-num">16</span>Risiko dan mitigasi (termasuk risiko yang tidak bisa dimitigasi)</a>
+<a class="nav-sub" href="#16-1-bisa-dimitigasi" data-target="16-1-bisa-dimitigasi">16.1 Bisa dimitigasi</a>
+<a class="nav-sub" href="#16-2-mitigasi-parsial" data-target="16-2-mitigasi-parsial">16.2 Mitigasi parsial</a>
+<a class="nav-sub" href="#16-3-tidak-bisa-dimitigasi" data-target="16-3-tidak-bisa-dimitigasi">16.3 Tidak bisa dimitigasi</a>
+<a class="nav-ch" href="#ch-17-gap-riset-dan-apa-yang-harus-diverifikasi-sebelum-uang" data-target="ch-17-gap-riset-dan-apa-yang-harus-diverifikasi-sebelum-uang"><span class="nav-num">17</span>Gap riset dan apa yang harus diverifikasi sebelum uang keluar</a>
+<a class="nav-ch" href="#ch-18-sumber" data-target="ch-18-sumber"><span class="nav-num">18</span>Sumber</a>
+        <a class="nav-ch" href="#kalkulator" data-target="kalkulator"><span class="nav-num">19</span>Hitung ulang dengan angkamu</a>
+      </nav>
+    </div>
+    <div class="rail-foot"><span>3 Nov 2026</span><span>18 bab + alat</span></div>
+  </aside>
+
+  <main>
+    <header class="cover">
+      <p class="kicker">Riset pasar &amp; strategi masuk</p>
+      <h1>Sewa perlengkapan bayi &amp; mom-care</h1>
+      <p class="lede">Permintaannya nyata. Yang tidak nyata adalah marginnya — kalau kamu cuma menyewakan barang. Dokumen ini membedah ke mana uang sebenarnya mengalir.</p>
+      <dl>
+        <div><dt>Cakupan</dt><dd>Jabodetabek, Bandung, Surabaya, Bali</dd></div>
+        <div><dt>Operator dibedah</dt><dd>Zaida, Cancan, Kiddy.id, Mamasewa, Patta</dd></div>
+        <div><dt>Metode</dt><dd>Katalog live, wawancara pers, sinyal X</dd></div>
+        <div><dt>Sumber angka</dt><dd>Bab 18 — semua terlabel</dd></div>
+      </dl>
+    </header>
+
+    <article>
+<article class="chapter" id="ch-1-kesimpulan-di-depan"><header class="chapter-head"><span class="chapter-num">1</span><h2>Kesimpulan di depan</h2></header>
+<p>Pasar sewa perlengkapan bayi di Indonesia nyata. Permintaannya terbukti, tersebar, dan berulang. Masalahnya ada di ekonomi sewa murni yang tipis.</p>
+<p>Lima hal yang perlu kamu pegang sebelum membaca bab lain:</p>
+<ol><li><strong>Sewa murni bukan bisnisnya.</strong> Armada contoh 15 unit (capex Rp52,5jt, harga mingguan Rp175rb) baru impas di utilisasi 20-21 hari/bulan, setara okupansi 67-71%. Di 12 hari/bulan kamu rugi Rp2,0jt per bulan. Di 24 hari/bulan labanya hanya Rp593rb. Artinya: kalau semuanya berjalan sangat baik, sewa murni cuma memberi laba setara gaji satu staf paruh waktu.</li></ol>
+<ol><li><strong>Laba datang dari menumpuk aliran di atas aset yang sama.</strong> Model tumpuk (sewa Rp7,5jt + laundry Rp1,3jt + retail Rp1,5jt + event Rp4jt) menghasilkan gross Rp14,3jt, net Rp5,7jt (39%), payback 9,3 bulan. Perhatikan komposisinya. Sewa Rp7,5jt itu setara utilisasi sekitar 20 hari/bulan (model: 15 unit x 20 hari / 7 x Rp175rb = Rp7,5jt), jadi di titik impas. Laba di model ini sepenuhnya datang dari laundry, retail, dan event.</li></ol>
+<ol><li><strong>Pemain yang naik tidak menang karena tarif.</strong> Mereka menang karena salah satu dari empat hal: modal armada ditanggung orang lain (Zaida, penitip 50:50), satu lonjakan event (Zaida, BBW Rp260jt dalam 12 hari), distribusi konten yang ada sebelum bisnis (Mamasewa), atau sistem katalog yang menghapus friksi (Kiddy, tanpa deposit).</li></ol>
+<ol><li><strong>Lubang terbesar ada di geografi dan kanal, bukan di produk.</strong> Jabodetabek punya 12+ pemain. Kota tier-2 seperti Ponorogo, Pontianak, dan Malang muncul di X sebagai tempat orang mencari, tapi riset ini tidak menemukan pemain aktif di sana. Bandung sebenarnya punya pemain (Mamasewa, Kiddy, Mamataro), tapi orang masih bertanya di @BaseBDG pada 2022 dan lagi pada 2026. Jadi di Bandung masalahnya penemuan, bukan ketersediaan.</li></ol>
+<ol><li><strong>Keunggulan kamu tepat di titik lemah pasar.</strong> Tidak ada pemain dengan brand kuat di level kategori. Hanya Mamasewa yang tumbuh dari konten, dan itu pun konten tulisan, bukan video. Kemampuan produksi konten dan beberapa akun IG yang sudah kamu jalankan adalah aset akuisisi yang tidak dimiliki pemain mana pun di riset ini.</li></ol>
+<p>Konsekuensi praktisnya: rancang bisnis ini sebagai <strong>mesin monetisasi ulang aset dengan akuisisi berbasis konten</strong>, bukan sebagai toko sewa. Pilih SKU berdasarkan payback (pompa ASI 8 bulan, box bayi 25 bulan, bundel mainan tidak pernah balik modal). Kejar okupansi sebelum menambah unit. Detail ekonomi unit ada di bab 7, rencana eksekusi di bab 8.</p>
+</article><article class="chapter" id="ch-2-peta-pasar-dan-di-mana-lubangnya"><header class="chapter-head"><span class="chapter-num">2</span><h2>Peta pasar dan di mana lubangnya</h2></header>
+<h3 id="2-1-struktur-terfragmentasi-tanpa-pemimpin-kategori">2.1 Struktur: terfragmentasi, tanpa pemimpin kategori</h3>
+<p>Pasar ini terdiri dari puluhan operator kecil. Yang terbesar pun masih terasa seperti operasi 1-2 orang per kota.</p>
+<div class="table-wrap"><table><thead><tr><th>Pemain</th><th>Mulai</th><th>Cakupan</th><th>Skala yang terlihat</th><th>Kekuatan inti</th></tr></thead><tbody><tr><td>Mamasewa</td><td>12 Des 2018</td><td>Jabodetabek, Karawang, Bandung, Semarang, Surabaya, Gresik, Sidoarjo</td><td>~500+ SKU</td><td>Konten founder, PT, SEO per kota</td></tr><tr><td>Kiddy.id</td><td>2017</td><td>Jabodetabek, Bandung, Surabaya</td><td>1.601 listing, 563 mainan</td><td>Tanpa deposit, sistem poin, affiliate, laundry</td></tr><tr><td>Babyvizta</td><td>Legacy</td><td>Surabaya, Jakarta</td><td>Ratusan SKU</td><td>Jual unit eks-sewa</td></tr><tr><td>Zaida Rental</td><td>Jun 2017</td><td>Jabodetabek</td><td>230 unit, Rp30jt/bulan (2019)</td><td>Penitip 50:50, event</td></tr><tr><td>Patta</td><td>Jan 2020</td><td>Jakarta</td><td>100+ item, modal Rp100jt+</td><td>Minimum 4 hari</td></tr></tbody></table></div>
+<p>Di bawahnya ada sekitar 20 pemain niche satu-dua kota. Beberapa contohnya: Babyloania, Babygobo (Bogor), Brephouse, Minyominyo (stroller kembar), Mamataro (Jakarta+Bandung), Cancan Baby (Surabaya+Sidoarjo), Innoukids (Bogor).</p>
+<p>Tiga hal tidak dimiliki siapa pun:</p>
+<ul><li><strong>App.</strong> Semua masih berjalan di situs WooCommerce/Next.js biasa plus WA.</li><li><strong>Loyalitas antar-kota.</strong> Pelanggan yang pindah kota atau berlibur tidak dibawa oleh sistem mana pun.</li><li><strong>Brand recall kategori.</strong> Tidak ada nama yang otomatis muncul saat orang berpikir &quot;sewa stroller&quot;.</li></ul>
+<p>Kenapa ini penting: di pasar terfragmentasi, pemain baru tidak perlu mengalahkan pemimpin. Cukup menjadi pilihan yang paling mudah ditemukan dan paling dipercaya di satu wilayah.</p>
+<h3 id="2-2-dua-arsitektur-harga-dua-ekonomi">2.2 Dua arsitektur harga, dua ekonomi</h3>
+<p>Pasar memakai dua cara menjual. Ekonominya berbeda jauh.</p>
+<p><strong>Trip rental (Kiddy, per 3 hari).</strong> Stroller Rp70-680rb per 3 hari, setara sekitar Rp23-227rb per hari. Mainan Rp89-400rb per 3 hari. Tarif per hari tinggi, tapi unit harus disewa berkali-kali dalam sebulan supaya produktif. Setiap booking memicu biaya cuci (Rp35-50rb) dan antar (Rp35-40rb).</p>
+<p><strong>Subscription (Mamasewa, harga tampil per hari dari paket panjang).</strong> Pompa Spectra 9+ Rp6.071/hari (sekitar Rp182rb/bulan). Box bayi Rp6.111-11.111/hari (sekitar Rp183-333rb/bulan). Joie Pact Lite Rp11.607/hari, Hamilton X1 Rp32.142/hari. Satu booking mengunci unit berminggu-minggu. Biaya cuci dan antar hanya terjadi sekali per siklus. Okupansi tinggi, tapi pendapatan per hari rendah dan kamu harus terus mencari pelanggan baru.</p>
+<p>Contoh selisihnya pada pompa ASI. Kiddy menjual Rp80-250rb per minggu. Mamasewa sekitar Rp182rb per bulan. Model payback di bab ini memakai Rp200rb per minggu dengan 3 booking per bulan. Jadi pompa yang sama bisa menghasilkan sekitar Rp600rb per bulan (model, trip) atau Rp182rb per bulan (subscription). Pilihan arsitektur menentukan apakah satu SKU balik modal dalam 8 bulan atau jauh lebih lama.</p>
+<p>Pemain yang bertahan memakai keduanya dalam satu katalog. Kiddy menjual stroller per 3 hari dan pompa per minggu. Mamasewa menjual paket bulanan dan perlengkapan traveling.</p>
+<h3 id="2-3-di-mana-lubangnya">2.3 Di mana lubangnya</h3>
+<p><strong>Lubang 1: kota tier-2 tanpa pemain yang ditemukan.</strong> Sinyal X datang dari Yogyakarta (2016), Malang (2021), Pontianak (2023), Ponorogo (2026), dan Bandung (2022 dan 2026). Riset ini tidak menemukan pemain aktif di Ponorogo atau Pontianak. Akun @strollermalang mati. Catatan jujur: tidak ditemukan di riset belum tentu tidak ada. Riset ini juga belum mengecek volume pencarian Google per kota (lihat bab 9 riset, gap terbuka).</p>
+<p><strong>Lubang 2: kanal penemuan.</strong> Bandung adalah bukti paling tajam. Tiga pemain melayani Bandung, tapi seseorang bertanya di @BaseBDG pada 28 Nov 2022 dan lagi pada 24 Feb 2026. Pemain yang ada tidak hadir di tempat orang bertanya. Akun sewa di X ditinggalkan (@SewaStroller, @sewastrollerjkt). Akibatnya autobase daerah jadi kanal permintaan gratis yang tidak digarap siapa pun.</p>
+<p><strong>Lubang 3: higiene yang diperlihatkan.</strong> Semua ulasan positif menyebut &quot;bersih, wangi, disterilkan&quot;. Cancan Baby lahir dari barang sewaan yang kotor. Tapi riset tidak menemukan pemain yang menjadikan proses sterilisasi sebagai konten rutin. Bagi tim yang kuat di produksi konten, ini celah positioning paling murah.</p>
+<p><strong>Lubang 4: B2B terstruktur.</strong> Zaida membuktikan nilai event (Rp260jt dalam 12 hari). Riset tidak menemukan pemain yang menjual B2B sebagai lini tetap ke hotel/villa, klinik laktasi, atau rumah sakit. Kemitraan hotel/villa masih tercatat sebagai gap.</p>
+<p><strong>Bukan lubang: Jabodetabek.</strong> Pasarnya besar, tapi 12+ pemain sudah ada. Masuk sebagai pemain ke-13 tanpa diferensiasi berarti bersaing di harga, padahal margin sewa sudah tipis (lihat bab 6).</p>
+</article><article class="chapter" id="ch-3-anatomi-permintaan-siapa-beli-kapan-kenapa-berapa-kali"><header class="chapter-head"><span class="chapter-num">3</span><h2>Anatomi permintaan: siapa beli, kapan, kenapa, berapa kali</h2></header>
+<p>Empat persona di bawah diturunkan dari tiga jenis bukti: kategori SKU dan arsitektur harga pemain, sinyal X, dan studi kasus. LTV adalah estimasi dari harga pasar live, bukan data pelanggan. Tidak ada pemain yang mempublikasikan data retensi.</p>
+<h3 id="3-1-persona-a-ibu-menyusui-yang-butuh-pompa-asi">3.1 Persona A: Ibu menyusui yang butuh pompa ASI</h3>
+<p><strong>Bukti.</strong> Pompa ASI dijual mingguan (Kiddy Rp80-250rb) dan bulanan (Mamasewa sekitar Rp182rb). Mamasewa punya 76 SKU di kategori for-mom. Riset menyebut klinik dan rumah sakit (pompa pasca-lahir) sebagai kanal paling natural. Pompa juga SKU dengan payback tercepat, 8 bulan.</p>
+<p><strong>Trigger.</strong> Dua momen. Pertama, hari-hari pasca-lahir saat menyusui langsung bermasalah. Kedua, cuti melahirkan habis dan ibu kembali kerja (inferensi dari pola paket mingguan dan bulanan).</p>
+<p><strong>Momen pencarian.</strong> Mendesak dan tidak terencana untuk trigger pertama. Pencarian terjadi di rumah sakit atau beberapa hari setelah pulang. Untuk trigger kedua lebih terencana, beberapa minggu sebelum masuk kerja.</p>
+<p><strong>Kenapa sewa, bukan beli.</strong> Spectra 9+ dijual Rp2,19jt. Ibu belum tahu berapa lama akan memompa, atau apakah pompa itu cocok untuknya. Sewa adalah cara menguji tanpa komitmen Rp2,19jt.</p>
+<p><strong>Willingness to pay.</strong> Rp80-250rb per minggu di trip rental, sekitar Rp182rb per bulan di subscription. Model memakai Rp200rb per minggu.</p>
+<p><strong>Siklus pakai.</strong> Mingguan sampai berbulan-bulan.</p>
+<p><strong>LTV (estimasi).</strong> Skenario rendah: 3 bulan subscription x Rp182rb = Rp546rb. Skenario tinggi: 4 minggu x Rp200rb = Rp800rb, lalu pindah ke paket bulanan atau membeli unit eks-sewa.</p>
+<p><strong>Implikasi.</strong> Persona ini paling bernilai per rupiah capex. Dia juga paling cocok untuk aliran tambahan: jual unit eks-sewa, aksesori (botol, kantong ASI), dan rujukan dari klinik.</p>
+<h3 id="3-2-persona-b-keluarga-yang-bepergian-sering-dadakan">3.2 Persona B: Keluarga yang bepergian, sering dadakan</h3>
+<p><strong>Bukti.</strong> Sinyal X paling banyak ada di sini. @tenpo_png (9 Jul 2026): &quot;info sewa stroller yang ready hari minggu ini&quot;. @JogjaUpdate (2016) mencari stroller di sekitar Malioboro, area wisata. @bardanslm (25 Mar 2026) menyewa stroller traveling untuk ke Jepang sekitar Rp100rb-an per minggu, menyebutnya &quot;worth it bgt&quot;, lalu ditanya &quot;spill-nya&quot;. Patta memakai minimum 4 hari karena celah weekend dan trip pendek. Cancan Baby nyaris mati saat penerbangan tutup.</p>
+<p><strong>Trigger.</strong> Liburan, mudik, perjalanan ke luar kota atau luar negeri, kunjungan keluarga. Kadang dua arah: wisatawan yang datang ke kota kamu dan tidak membawa stroller.</p>
+<p><strong>Momen pencarian.</strong> Sangat dekat dengan hari H (&quot;ready hari minggu ini&quot;). Kanal pertamanya autobase atau rekomendasi, bukan katalog. Pemenangnya punya stok siap dan bisa antar di hari yang sama.</p>
+<p><strong>Kenapa sewa.</strong> Travel stroller Yoyo2 dijual Rp4,5-7jt dan dipakai beberapa hari per tahun. Doona Rp6,6jt. Membeli untuk satu perjalanan tidak masuk akal.</p>
+<p><strong>Willingness to pay.</strong> Rentang lebar: Rp70-680rb per 3 hari (Kiddy). Model memakai Rp199rb per 3 hari untuk travel stroller, Rp350rb untuk Hamilton X1, Rp329rb untuk car seat/Doona.</p>
+<p><strong>Siklus pakai.</strong> 3-14 hari per perjalanan. Frekuensi 1-3 kali per tahun (estimasi, belum ada data pemain).</p>
+<p><strong>LTV (estimasi).</strong> Dua perjalanan per tahun x Rp199rb = Rp398rb per tahun untuk satu stroller. Bisa naik kalau dibundel dengan car seat (Rp199rb + Rp329rb = Rp528rb per trip).</p>
+<p><strong>Implikasi.</strong> Tarif per hari tinggi, tapi musiman dan rapuh. Ini bukan fondasi pendapatan, melainkan pelengkap dengan margin baik. Persona ini juga mesin word-of-mouth terkuat karena pengalaman perjalanannya diceritakan di media sosial (@bardanslm).</p>
+<h3 id="3-3-persona-c-orang-tua-bayi-baru-yang-menyiapkan-nursery">3.3 Persona C: Orang tua bayi baru yang menyiapkan nursery</h3>
+<p><strong>Bukti.</strong> @ngalamfess (31 Des 2021) bertanya tempat di Malang yang menyewakan &quot;box bayi, stroller, bouncer dll&quot;. Ini pencarian paket, bukan satu barang. Mamasewa punya 77 SKU nursery dan 54 bumperbed/playmat. Patta menjual paket baby plus 5 bulan Rp1,192jt. Box bayi di Mamasewa sekitar Rp183-333rb per bulan.</p>
+<p><strong>Trigger.</strong> Kehamilan trimester akhir sampai bulan pertama bayi. Ada juga kunjungan bayi ke rumah kakek-nenek yang tidak punya perlengkapan (inferensi).</p>
+<p><strong>Momen pencarian.</strong> Lebih terencana dari persona B, beberapa minggu sebelum lahir. Ada keinginan membeli sekali untuk banyak barang.</p>
+<p><strong>Kenapa sewa.</strong> Box bayi dan bouncer hanya dipakai beberapa bulan. Rumah perkotaan sempit, barang besar sulit disimpan setelah tidak terpakai.</p>
+<p><strong>Willingness to pay.</strong> Rp183-333rb per bulan per box. Paket 5 bulan Rp1,192jt (Patta), setara sekitar Rp238rb per bulan (model).</p>
+<p><strong>Siklus pakai.</strong> 3-6 bulan, lalu berganti kebutuhan ke mainan, stroller harian, dan seterusnya.</p>
+<p><strong>LTV (estimasi).</strong> Satu box 5 bulan x Rp300rb = Rp1,5jt. Paket ala Patta Rp1,192jt dibayar di depan. Kalau dilanjutkan ke mainan, nilainya naik. Tapi lihat peringatan di bawah.</p>
+<p><strong>Peringatan ekonomi.</strong> LTV tinggi tidak berarti SKU-nya sehat. Box bayi (capex Rp1,95jt, Rp300rb per bulan, 0,8 booking per bulan) butuh 25 bulan untuk balik modal. Bundel mainan bulanan negatif. Jadi persona C bernilai karena keranjangnya besar dan dia bisa dibawa ke pompa, stroller, laundry, dan retail. Jangan membangun armada besar khusus untuknya. Untuk SKU nursery, armada dari penitip lebih masuk akal (lihat pola 2 di bab 5).</p>
+<h3 id="3-4-persona-d-pembeli-b2b-dan-event">3.4 Persona D: Pembeli B2B dan event</h3>
+<p><strong>Bukti.</strong> Zaida mengerjakan proyek event BBW Jakarta, Maret 2019, 12 hari, omzet sekitar Rp260jt. Riset menyebut kanal B2B: event, hotel/villa, baby fair, family day kantor, klinik dan rumah sakit.</p>
+<p><strong>Trigger.</strong> Penyelenggara butuh perlengkapan bayi dalam jumlah banyak untuk waktu singkat. Hotel dan villa butuh perlengkapan untuk tamu keluarga.</p>
+<p><strong>Momen pencarian.</strong> Terencana, berminggu-minggu sebelumnya. Keputusan diambil oleh penyelenggara atau bagian pengadaan. Mereka memilih berdasarkan kredibilitas: badan hukum, portofolio, liputan pers. Ini alasan PT Mamasewa dan mesin PR Kiddy bernilai.</p>
+<p><strong>Willingness to pay.</strong> Satu event Zaida setara 8-9 bulan omzet normal. Model tumpuk memakai asumsi konservatif Rp4jt per bulan.</p>
+<p><strong>Siklus.</strong> Proyek, bisa berulang per tahun untuk event tahunan.</p>
+<p><strong>LTV (estimasi).</strong> Tidak bisa dihitung dari riset. Satu titik data saja: Rp260jt per event.</p>
+<p><strong>Implikasi.</strong> Persona D tidak akan muncul di autobase. Dia harus dijemput dengan penjualan aktif. Dialah yang membuat model tumpuk menghasilkan laba (lihat bab 4.1 dan pola 6).</p>
+<h3 id="3-5-ringkasan-persona">3.5 Ringkasan persona</h3>
+<div class="table-wrap"><table><thead><tr><th>Persona</th><th>SKU utama</th><th>Trigger</th><th>WTP pasar</th><th>LTV (estimasi)</th></tr></thead><tbody><tr><td>A. Ibu menyusui</td><td>Pompa ASI</td><td>Pasca-lahir, kembali kerja</td><td>Rp80-250rb/minggu</td><td>Rp546-800rb</td></tr><tr><td>B. Keluarga bepergian</td><td>Travel stroller, car seat</td><td>Trip, sering dadakan</td><td>Rp70-680rb/3 hari</td><td>Rp398-528rb/tahun</td></tr><tr><td>C. Bayi baru</td><td>Box, bouncer, playmat</td><td>Akhir kehamilan</td><td>Rp183-333rb/bulan</td><td>Rp1,19-1,5jt</td></tr><tr><td>D. B2B/event</td><td>Banyak unit sekaligus</td><td>Event, hotel</td><td>Proyek</td><td>1 data: Rp260jt/event</td></tr></tbody></table></div>
+</article><article class="chapter" id="ch-4-studi-kasus-pertumbuhan-5-operator-mekanisme-naiknya"><header class="chapter-head"><span class="chapter-num">4</span><h2>Studi kasus pertumbuhan: 5 operator, mekanisme naiknya</h2></header>
+<p>Semua angka omzet dan unit adalah klaim pemain ke media. Tidak ada data okupansi publik.</p>
+<h3 id="4-1-zaida-rental-aset-sendiri-lalu-aset-orang-lain-lalu-even">4.1 Zaida Rental: aset sendiri, lalu aset orang lain, lalu event</h3>
+<p><strong>Timeline</strong></p>
+<ul><li>Jun 2017: mulai dengan 4 unit milik sendiri (stroller, alat cukur bayi, kolam baby spa, gendongan). Suami memberi syarat: modal ditambah kalau pelanggan naik.</li><li>2018: suami terkena PHK. Pesangon Rp30jt jadi modal tambah unit.</li><li>Setelah itu: membuka skema penitip. Ibu-ibu lain menitipkan barang, bagi hasil 50:50.</li><li>2019: 230 unit, 200-300 unit tersewa per bulan, omzet rata-rata Rp30jt per bulan.</li><li>Mar 2019: event BBW Jakarta, 12 hari, omzet sekitar Rp260jt.</li></ul>
+<p><strong>Angka antara (model)</strong></p>
+<ul><li>Tiket rata-rata: Rp30jt / sekitar 250 transaksi = Rp120rb. Tiket kecil, volume besar.</li><li>Perputaran per unit: 250 sewa / 230 unit ≈ 1,1 kali per unit per bulan. Ini rendah. Dengan armada milik sendiri, angka ini menunjukkan banyak modal yang menganggur.</li><li>Omzet harian normal: Rp30jt / 30 ≈ Rp1jt per hari. Omzet harian saat BBW: Rp260jt / 12 ≈ Rp21,7jt per hari. Sekitar 22 kali lipat.</li><li>Rp260jt / Rp30jt ≈ 8,7 bulan omzet normal.</li></ul>
+<p><strong>Yang sebenarnya menghasilkan lonjakan</strong></p>
+<ul><li><em>Omzet harian</em> tumbuh karena penitip. Dari 4 unit ke 230 unit tanpa modal sebesar itu. Dengan perputaran sekitar 1,1 kali per bulan, armada milik sendiri sulit balik modal. Penitip mengubah persoalan itu: capex unit ditanggung pemilik barang, Zaida membagi pendapatan. Risiko unit menganggur pindah ke penitip.</li><li><em>Lonjakan yang terlihat</em> datang dari satu event. BBW bukan perpanjangan bisnis harian. Itu kanal yang sama sekali berbeda, dengan pembeli yang berbeda (persona D).</li><li>Pembagian peran sejak awal: satu orang memegang marketing, keuangan, CS. Satu lagi memegang gudang dan pengiriman. Kapasitas antar tidak bertabrakan dengan kapasitas jualan.</li></ul>
+<h3 id="4-2-cancan-baby-kualitas-sebagai-satu-satunya-positioning">4.2 Cancan Baby: kualitas sebagai satu-satunya positioning</h3>
+<p><strong>Timeline</strong></p>
+<ul><li>Awal: Afandi adalah pelanggan yang kecewa karena barang sewaan kotor dan tidak terawat.</li><li>Positioning: stroller ramah traveling yang dibersihkan dan disterilkan sebelum dikirim.</li><li>Pandemi (2020): penerbangan tutup, sewa stroller mati. Pivot ke marketplace: kebutuhan bayi, hand sanitizer, masker.</li><li>Kemudian: pelanggan bertanya &quot;terima laundry stroller?&quot;. Lahir lini laundry dengan IG terpisah (<code>cancanbabyrent</code> dan <code>cucicancan</code>).</li><li>Skala: dari antar sendiri 5-6 pelanggan per hari ke karyawan dan ojek online.</li><li>Jangkauan: pelanggan luar kota dan mancanegara (Malaysia) lewat Instagram.</li><li>Sumber publik: kasirpintar, 2022.</li></ul>
+<p><strong>Yang sebenarnya menghasilkan pertumbuhan</strong></p>
+<ul><li><em>Akuisisi</em>: higiene yang bisa dilihat, dijual lewat IG. Itu satu-satunya alasan orang pindah ke Cancan.</li><li><em>Ketahanan</em>: lini kedua (marketplace, laundry) menjaga cashflow saat lini utama mati.</li><li><em>Plafon</em>: kapasitas antar, bukan permintaan. Baru naik setelah ada staf.</li><li><em>Konversi</em>: jaminan minimal (foto KTP/KK, deposit Rp100rb) menurunkan friksi. Risikonya dibahas di bab 6.</li><li>Tidak ada data omzet event publik untuk Cancan.</li></ul>
+<h3 id="4-3-kiddy-id-sistem-dan-katalog-bukan-gudang">4.3 Kiddy.id: sistem dan katalog, bukan gudang</h3>
+<p><strong>Timeline</strong></p>
+<ul><li>2017: berdiri (CV Rental Favorit Ibu) dari pengalaman Maria Ulfa sebagai orang tua baru. Barang mahal, masa pakai pendek.</li><li>2020: pandemi menaikkan bisnis karena orang tidak keluar rumah dan sewa mainan jadi solusi. Ini pernyataan founder sendiri.</li><li>23 Des 2022: rilis pers Kontan.</li><li>9 Mar 2026: liputan Haibunda. Sebelumnya juga Antara.</li><li>Sekarang: 1.601 listing, 563 di mainan. Tanpa deposit, poin membership, affiliate dan referral, promo harian bertingkat (Daily 50/25/10), Kiddy Wash (laundry), blog dan sitemap harian. Melayani Jabodetabek, Bandung, Surabaya.</li></ul>
+<p><strong>Yang sebenarnya menghasilkan pertumbuhan</strong></p>
+<ul><li><em>Konversi</em>: tanpa deposit menghapus friksi terbesar di kategori ini.</li><li><em>Retensi dan referral</em>: poin dan affiliate membuat pelanggan lama membawa pelanggan baru.</li><li><em>Penemuan</em>: katalog besar ditambah blog dan sitemap harian membuat Kiddy muncul di banyak pencarian.</li><li><em>Kredibilitas</em>: pers berulang selama 2022-2026 berfungsi sebagai iklan gratis.</li><li><em>Lonjakan</em>: pandemi, yaitu guncangan permintaan eksternal di kategori mainan. Ini nasib kategori, bukan strategi yang bisa ditiru.</li><li>Tidak ada data omzet publik di riset ini.</li></ul>
+<h3 id="4-4-mamasewa-konten-lalu-badan-hukum-lalu-ekspansi-lewat-sub">4.4 Mamasewa: konten, lalu badan hukum, lalu ekspansi lewat subdomain</h3>
+<p><strong>Timeline</strong></p>
+<ul><li>Sebelum 2018: Amalia Sinta (ex-banker) menulis konten parenting yang viral. Tulisannya dibukukan (#SharingnyaSinta).</li><li>12 Des 2018: Mamasewa mulai.</li><li>Jul 2019: menjadi PT (PT Mamasewa Solusi Indonesia), tujuh bulan setelah mulai.</li><li>2021: liputan Media Indonesia.</li><li>Sekarang: Jabodetabek, Karawang, Bandung, Semarang, Surabaya, Gresik, Sidoarjo. Lima subdomain kota. Sekitar 500+ SKU. Antar-jemput flat mulai Rp25rb. Klaim &quot;7 tahun&quot; dan deretan logo pers di beranda.</li></ul>
+<p><strong>Yang sebenarnya menghasilkan pertumbuhan</strong></p>
+<ul><li><em>Akuisisi awal</em>: audiens sudah ada sebelum katalog. Biaya akuisisi di fase awal mendekati nol karena pembaca sudah percaya pada founder.</li><li><em>Kepercayaan</em>: PT dipakai sebagai alat kredibilitas untuk B2B dan pers.</li><li><em>Ekspansi</em>: subdomain dan halaman per kota (&quot;Sewa Perlengkapan Bayi Bekasi&quot;) menangkap pencarian geografis tanpa membangun brand baru per kota.</li><li><em>Operasi</em>: tarif antar flat membuat staf non-ahli bisa menangani pesanan tanpa menghitung ongkir.</li><li>Tidak ada data omzet publik di riset ini.</li></ul>
+<h3 id="4-5-patta-menyerang-celah-durasi">4.5 Patta: menyerang celah durasi</h3>
+<p><strong>Timeline</strong></p>
+<ul><li>Jan 2020: mulai dengan modal Rp100jt+ (barang, mobil, website sejak hari pertama).</li><li>Riset kompetitor sederhana: semua menjual per minggu, tidak ada yang menjual 4 hari.</li><li>Positioning: minimum 4 hari, untuk weekend dan trip pendek.</li><li>Ekspansi kategori: ibu hamil (baby plus). Paket 5 bulan Rp1,192jt.</li><li>Skala: 100+ item. Sumber: detik, 2021.</li></ul>
+<p><strong>Angka antara (model).</strong> Paket Rp1,192jt / 5 bulan ≈ Rp238rb per bulan, dibayar di depan. Uang tunai masuk sebelum biaya unit berjalan.</p>
+<p><strong>Yang sebenarnya menghasilkan pertumbuhan</strong></p>
+<ul><li><em>Diferensiasi</em>: durasi, bukan harga. Celah weekend ada karena paket mingguan terlalu panjang untuk trip 2-3 hari.</li><li><em>Cashflow</em>: paket panjang yang dibayar di depan menambah LTV per pelanggan dan mengurangi kebutuhan modal kerja.</li><li><em>Risiko waktu</em>: Patta mulai Jan 2020, tepat sebelum pandemi memukul segmen trip. Riset tidak mencatat bagaimana mereka melewatinya.</li></ul>
+<h3 id="4-6-perbandingan-mekanisme">4.6 Perbandingan mekanisme</h3>
+<div class="table-wrap"><table><thead><tr><th>Operator</th><th>Mesin akuisisi</th><th>Mesin skala</th><th>Sumber lonjakan</th><th>Omzet event publik</th></tr></thead><tbody><tr><td>Zaida</td><td>Komunitas ibu</td><td>Penitip 50:50</td><td>Event BBW</td><td>Rp260jt/12 hari</td></tr><tr><td>Cancan Baby</td><td>IG, higiene</td><td>Staf + ojol</td><td>Lini laundry/marketplace</td><td>Tidak ada</td></tr><tr><td>Kiddy.id</td><td>Katalog, SEO, pers</td><td>Sistem tanpa deposit</td><td>Pandemi (mainan)</td><td>Tidak ada</td></tr><tr><td>Mamasewa</td><td>Konten founder</td><td>Subdomain per kota</td><td>Ekspansi kota</td><td>Tidak ada</td></tr><tr><td>Patta</td><td>Celah durasi</td><td>Modal awal Rp100jt+</td><td>Paket di depan</td><td>Tidak ada</td></tr></tbody></table></div>
+<p>Pelajarannya: tidak satu pun naik karena tarif sewa lebih murah. Semuanya naik karena memecahkan satu kendala: modal (Zaida), kepercayaan (Cancan, Mamasewa), friksi (Kiddy), atau durasi (Patta).</p>
+</article><article class="chapter" id="ch-5-delapan-pola-menang-dan-mekanismenya"><header class="chapter-head"><span class="chapter-num">5</span><h2>Delapan pola menang dan mekanismenya</h2></header>
+<p>Setiap pola disertai mekanisme, bukti, syarat, dan cara memfalsifikasinya. Kalau tanda falsifikasi muncul di operasimu, jangan teruskan pola itu.</p>
+<h3 id="5-1-founder-market-fit-dari-luka-sendiri">5.1 Founder-market fit dari luka sendiri</h3>
+<p><strong>Mekanisme.</strong> Founder yang pernah kecewa sebagai orang tua atau pelanggan tahu persis titik sakitnya. Ceritanya jadi konten pertama. Calon pelanggan dengan masalah sama merasa diwakili, jadi kepercayaan terbentuk sebelum transaksi. Di kategori yang menyangkut bayi, kepercayaan adalah hambatan konversi utama.</p>
+<p><strong>Bukti.</strong> Marshela (Zaida), Maria Ulfa (Kiddy), Winey (Patta), Afandi (Cancan) semuanya mulai dari kekecewaan. Amalia Sinta (Mamasewa) membangun audiens dari tulisan parenting.</p>
+<p><strong>Syarat.</strong> Ceritanya harus asli dan bisa diulang dalam format konten. Kalau kamu bukan pengguna langsung, kamu butuh wajah yang punya cerita itu: ibu di tim, mitra, atau pelanggan pertama.</p>
+<p><strong>Falsifikasi.</strong> Kalau konten berbasis cerita tidak menghasilkan engagement atau DM lebih tinggi dari konten katalog biasa dalam 4-6 minggu pengujian, pola ini tidak bekerja untuk audiensmu.</p>
+<h3 id="5-2-armada-dari-aset-orang-lain-penitip-50-50">5.2 Armada dari aset orang lain (penitip 50:50)</h3>
+<p><strong>Mekanisme.</strong> Breakeven armada sendiri ada di okupansi 67-71%. Dengan penitip, capex unit nol bagi operator. Unit yang menganggur tidak membakar modal operator. Operator menukar setengah pendapatan dengan hilangnya risiko capex. Di perputaran rendah seperti Zaida (sekitar 1,1 sewa per unit per bulan, model), ini satu-satunya cara armada 230 unit tetap masuk akal.</p>
+<p><strong>Bukti.</strong> Zaida naik dari 4 unit ke 230 unit. Pemain lain di riset masih membeli sendiri.</p>
+<p><strong>Syarat.</strong> Tiga hal. Pertama, komunitas ibu yang punya barang menganggur. Kedua, standar kualitas dan kebersihan untuk barang titipan. Ketiga, aturan kerusakan dan kehilangan yang jelas.</p>
+<p><strong>Kapan dipakai.</strong> Paling tepat untuk SKU dengan payback buruk: box bayi (25 bulan), bundel mainan (negatif). Untuk pompa (8 bulan), membeli sendiri lebih menguntungkan karena kamu menyimpan 100% kontribusi.</p>
+<p><strong>Falsifikasi.</strong> Kalau dalam 60 hari kamu tidak bisa mengumpulkan unit titipan berkualitas layak sewa, atau sengketa kerusakan menghabiskan lebih banyak waktu daripada mengelola stok sendiri, pola ini gagal di kotamu.</p>
+<h3 id="5-3-higiene-sebagai-produk-bukan-sop">5.3 Higiene sebagai produk, bukan SOP</h3>
+<p><strong>Mekanisme.</strong> Orang tua takut barang bekas pakai bayi lain. Ketakutan ini menahan konversi. Kalau proses sterilisasi diperlihatkan (before/after, UV sterilizer), ketakutan diganti dengan bukti visual. Bukti yang sama menjadi konten yang bisa diproduksi berulang tanpa biaya ide baru.</p>
+<p><strong>Bukti.</strong> Semua ulasan positif menyebut &quot;bersih, wangi, disterilkan&quot;. Diferensiasi tunggal Cancan Baby adalah sterilisasi. Pertanyaan pelanggan Cancan melahirkan lini laundry.</p>
+<p><strong>Syarat.</strong> Prosesnya harus benar-benar dilakukan setiap booking, bukan hanya untuk konten. Satu ulasan &quot;barang kotor&quot; meruntuhkan seluruh positioning. Biaya cuci Rp35-50rb per booking harus masuk harga.</p>
+<p><strong>Falsifikasi.</strong> Kalau konten higiene tidak menaikkan konversi DM ke booking dibanding konten produk, atau pelanggan tidak bersedia membayar selisih harga untuk standar ini dibanding pemain murah, maka higiene hanya syarat minimum, bukan pembeda.</p>
+<h3 id="5-4-arsitektur-durasi-ganda">5.4 Arsitektur durasi ganda</h3>
+<p><strong>Mekanisme.</strong> Trip pendek memberi tarif per hari tinggi tapi butuh frekuensi. Paket panjang memberi okupansi tapi tarif per hari rendah. Menggabungkan keduanya mengisi kalender unit: paket panjang menjadi dasar okupansi, trip pendek mengisi celah dengan margin lebih tinggi. Breakeven 67-71% lebih mudah dicapai dengan dua jenis permintaan daripada satu.</p>
+<p><strong>Bukti.</strong> Kiddy menjual stroller per 3 hari dan pompa per minggu. Mamasewa menjual paket bulanan plus perlengkapan traveling. Patta menjual minimum 4 hari plus paket 5 bulan.</p>
+<p><strong>Syarat.</strong> Kalender inventori real-time supaya paket panjang dan trip pendek tidak bertabrakan. SKU yang dipisah per arsitektur: stroller dan car seat untuk trip, box dan pompa untuk paket.</p>
+<p><strong>Falsifikasi.</strong> Kalau setelah 90 hari salah satu jenis durasi menyumbang kurang dari sekitar 15% hari-unit terisi (estimasi ambang), kamu sebenarnya hanya menjalankan satu arsitektur. Sederhanakan katalog.</p>
+<h3 id="5-5-ekspansi-kota-lewat-seo-geo-dan-mitra-lokal">5.5 Ekspansi kota lewat SEO geo dan mitra lokal</h3>
+<p><strong>Mekanisme.</strong> Pencarian &quot;sewa X [kota]&quot; punya niat beli tinggi. Halaman atau subdomain per kota menangkap niat itu dengan biaya marginal kecil. Mitra lokal atau gudang kecil memenuhi pesanan tanpa cabang penuh. Brand yang sama membawa kepercayaan dari kota lama ke kota baru.</p>
+<p><strong>Bukti.</strong> Mamasewa memakai lima subdomain kota dan halaman seperti &quot;Sewa Perlengkapan Bayi Bekasi&quot;. Kiddy melayani tiga kota.</p>
+<p><strong>Syarat.</strong> Volume pencarian lokal harus ada. Ini belum diverifikasi di riset (gap terbuka). Pemenuhan di kota baru harus bisa antar di hari yang sama, karena permintaan bersifat dadakan.</p>
+<p><strong>Falsifikasi.</strong> Kalau halaman kota baru tidak menghasilkan pertanyaan organik dalam 3 bulan, atau pesanan di kota itu gagal dipenuhi tepat waktu, SEO geo tanpa pemenuhan lokal hanya menghasilkan ulasan buruk.</p>
+<h3 id="5-6-b2b-dan-event-sebagai-lonjakan-laba">5.6 B2B dan event sebagai lonjakan laba</h3>
+<p><strong>Mekanisme.</strong> Event menyewa banyak unit sekaligus untuk waktu singkat, dengan satu negosiasi dan satu logistik. Biaya akuisisi per unit tersewa jauh lebih rendah daripada sewa ritel. Event memakai armada yang sama di periode yang dipesan dari jauh hari. Hasilnya: pendapatan besar dengan biaya tambahan relatif kecil.</p>
+<p><strong>Bukti.</strong> Zaida, BBW, Rp260jt dalam 12 hari, setara sekitar 8,7 bulan omzet normal (model). Di model tumpuk, event Rp4jt per bulan adalah aliran terbesar kedua dan yang paling menentukan laba.</p>
+<p><strong>Uji ketergantungan (estimasi).</strong> Kalau event dihapus dari model tumpuk, gross turun ke Rp10,3jt. Net turun paling dalam ke sekitar Rp1,7jt, dengan asumsi terburuk bahwa event Rp4jt itu seluruhnya laba. Artinya model net Rp5,7jt bergantung besar pada event yang berjalan rutin.</p>
+<p><strong>Syarat.</strong> Kredibilitas formal (PT, portofolio, pers), kapasitas armada atau akses penitip untuk lonjakan volume, dan penjualan aktif. Pembeli B2B tidak datang dari autobase.</p>
+<p><strong>Falsifikasi.</strong> Kalau dalam dua kuartal kamu tidak mendapatkan satu pun kontrak B2B (hotel/villa, klinik, baby fair, family day), asumsi Rp4jt per bulan tidak berlaku. Hitung ulang model tanpa event.</p>
+<h3 id="5-7-kanal-dibagi-per-fungsi">5.7 Kanal dibagi per fungsi</h3>
+<p><strong>Mekanisme.</strong> Setiap kanal punya keunggulan pada satu tahap. X dan autobase menangkap permintaan dadakan lokal. IG/TikTok menyediakan bukti sosial untuk closing. WA menangani operasi: jadwal, alamat, pembayaran. Marketplace menambah permintaan. Pers memberi kredibilitas. Memaksa satu kanal melakukan semua tahap menurunkan konversi.</p>
+<p><strong>Bukti.</strong> Sinyal X dari autobase berulang selama 2016-2026, sementara akun sewa di X mati. Pelanggan luar negeri Cancan datang lewat IG. Ada 665 listing &quot;sewa mainan&quot; di marketplace. Kiddy dan Mamasewa memakai pers sebagai kredibilitas.</p>
+<p><strong>Syarat.</strong> Pelacakan sumber per pesanan supaya kamu tahu kanal mana yang benar-benar menghasilkan booking. Respons cepat di autobase, karena pertanyaan &quot;ready minggu ini&quot; basi dalam hitungan jam.</p>
+<p><strong>Falsifikasi.</strong> Kalau autobase tidak menghasilkan booking terlacak setelah 6-8 minggu respons rutin, X bukan kanal permintaan di kotamu. Alihkan tenaga ke grup FB lokal atau IG.</p>
+<h3 id="5-8-lini-kedua-dari-aset-yang-sama">5.8 Lini kedua dari aset yang sama</h3>
+<p><strong>Mekanisme.</strong> Biaya terbesar sudah dibayar: unit, gudang, alat cuci, staf antar, audiens. Lini kedua memakai biaya yang sama untuk pendapatan baru. Laundry memakai alat dan SOP sterilisasi. Unit eks-sewa dijual di akhir masa pakai sehingga nilai sisa kembali. Affiliate memakai audiens. Ini jalur dari sewa yang hanya impas ke net 39% di model tumpuk.</p>
+<p><strong>Bukti.</strong> Kiddy Wash, <code>cucicancan</code>, Babyvizta menjual unit eks-sewa, affiliate Kiddy, marketplace Cancan. Di model tumpuk, laundry Rp1,3jt dan retail Rp1,5jt adalah tambahan di atas sewa Rp7,5jt.</p>
+<p><strong>Syarat.</strong> Lini kedua harus memakai aset yang sudah ada, bukan butuh aset baru. Pisahkan identitas jika segmennya berbeda, seperti Cancan memisahkan IG laundry.</p>
+<p><strong>Falsifikasi.</strong> Kalau lini kedua menyedot waktu staf sampai pengiriman sewa telat atau kualitas cuci turun, lini itu memakan inti bisnis. Hentikan atau pisahkan timnya.</p>
+</article><article class="chapter" id="ch-6-pola-gagal-dan-cara-kerjanya-membunuh-bisnis"><header class="chapter-head"><span class="chapter-num">6</span><h2>Pola gagal dan cara kerjanya membunuh bisnis</h2></header>
+<p>Setiap pola gagal di bawah punya rantai sebab-akibat yang bisa dipantau. Pantau indikatornya, bukan hanya hasil akhirnya.</p>
+<h3 id="6-1-okupansi-di-bawah-67-modal-mati-di-rak">6.1 Okupansi di bawah 67%: modal mati di rak</h3>
+<p><strong>Rantai.</strong> Kamu membeli unit. Unit menunggu booking. Setiap bulan alokasi gudang (Rp60rb per unit) dan maintenance (2% capex) tetap jalan. Pendapatan tidak menutup biaya. Kas terkuras, dan masalahnya bukan marketing yang mahal, tapi barang yang menganggur.</p>
+<p><strong>Angka.</strong> Armada 15 unit:</p>
+<ul><li>12 hari/bulan: rugi Rp2,0jt</li><li>16 hari: rugi Rp1,1jt</li><li>20 hari: rugi Rp264rb</li><li>24 hari: laba Rp593rb</li></ul>
+<p>Setiap tambahan 4 hari per bulan menambah pendapatan sewa sekitar Rp1,5jt (model: 15 x 4 / 7 x Rp175rb). Tapi laba hanya naik sekitar Rp0,84-0,9jt, karena biaya cuci dan antar ikut naik setiap booking. Mendongkrak okupansi lewat diskon juga mudah gagal: diskon menurunkan pendapatan per hari, sementara biaya per booking tetap.</p>
+<p><strong>Kenapa membunuh.</strong> Pemain kecil biasanya merespons sepi dengan membeli unit baru supaya katalog terlihat lengkap. Itu menambah biaya tetap tanpa menaikkan okupansi. Riset menyebut angka ini membunuh 90% pemain kecil.</p>
+<p><strong>Indikator dini.</strong> Utilisasi per SKU per minggu. Kalau di bawah 55% di bulan ke-3, jangan tambah unit (lihat bab 8).</p>
+<h3 id="6-2-membeli-sku-dengan-payback-buruk">6.2 Membeli SKU dengan payback buruk</h3>
+<p><strong>Rantai.</strong> Katalog dibangun dari apa yang &quot;dicari orang&quot;, bukan dari apa yang balik modal. Modal terikat di SKU lambat. Kas untuk SKU cepat habis.</p>
+<p><strong>Angka.</strong> Payback per unit:</p>
+<ul><li>Pompa Spectra 9+: 8 bulan</li><li>Car seat/Doona: 12 bulan</li><li>Travel stroller premium: 14 bulan</li><li>Travel stroller: 15 bulan</li><li>Box bayi: 25 bulan</li><li>Bundel mainan bulanan: tidak balik modal</li></ul>
+<p>Rp1,95jt yang ditaruh di satu box bayi bisa membeli hampir satu pompa (Rp2,19jt). Pompa itu balik modal dalam sepertiga waktunya.</p>
+<p><strong>Kenapa membunuh.</strong> Permintaan nursery dan mainan terlihat besar (persona C, kategori mainan Kiddy 563 listing). Membangun armada sendiri untuk kategori itu mengunci modal terlalu lama.</p>
+<p><strong>Indikator dini.</strong> Proporsi capex di SKU dengan payback di atas 15 bulan. Isi kategori itu dengan penitip (pola 2).</p>
+<h3 id="6-3-ketergantungan-travel-satu-guncangan-pendapatan-nol">6.3 Ketergantungan travel: satu guncangan, pendapatan nol</h3>
+<p><strong>Rantai.</strong> Katalog didominasi stroller traveling dan car seat. Pendapatan ikut kalender liburan dan penerbangan. Guncangan eksternal datang. Permintaan turun ke nol, sementara biaya tetap berjalan.</p>
+<p><strong>Bukti.</strong> Cancan Baby hampir mati saat penerbangan tutup di pandemi, lalu bertahan lewat marketplace dan laundry. Kiddy justru naik di periode yang sama karena berbasis mainan untuk di rumah.</p>
+<p><strong>Kenapa membunuh.</strong> Persona B punya tarif per hari tertinggi, jadi menggoda untuk dijadikan inti. Padahal dia musiman dan rapuh.</p>
+<p><strong>Indikator dini.</strong> Porsi pendapatan dari SKU travel. Imbangi dengan pompa ASI (persona A), yang permintaannya dipicu kelahiran, bukan liburan.</p>
+<h3 id="6-4-kapasitas-antar-sebagai-plafon">6.4 Kapasitas antar sebagai plafon</h3>
+<p><strong>Rantai.</strong> Permintaan naik. Founder masih mengantar sendiri. Ada batas fisik pengantaran per hari. Pesanan ditolak atau telat. Ulasan memburuk. Permintaan turun lagi.</p>
+<p><strong>Bukti.</strong> Cancan Baby mentok di 5-6 pengantaran per hari sampai merekrut staf dan memakai ojek online. Zaida memisahkan peran gudang dan pengiriman sejak hari pertama.</p>
+<p><strong>Angka (model).</strong> Armada 15 unit di utilisasi 20 hari dengan sewa mingguan menghasilkan sekitar 43 minggu-unit per bulan. Itu sekitar 43 booking, masing-masing dengan antar dan jemput, jadi sekitar 86 perjalanan per bulan. Rata-ratanya sekitar 3 perjalanan per hari. Ini masih di bawah batas 5-6 per hari. Tapi permintaan menumpuk di akhir pekan (lihat &quot;ready hari minggu ini&quot;). Hari Jumat dan Sabtu bisa menembus batas walau rata-rata bulanan aman (estimasi).</p>
+<p><strong>Kenapa membunuh.</strong> Permintaan dadakan tidak menunggu. Pesanan yang ditolak di hari Sabtu pindah ke pesaing.</p>
+<p><strong>Indikator dini.</strong> Jumlah pesanan yang ditolak atau digeser karena tidak ada kurir, dihitung per hari, bukan per bulan.</p>
+<h3 id="6-5-jaminan-terlalu-tipis-satu-kehilangan-menghapus-berbulan">6.5 Jaminan terlalu tipis: satu kehilangan menghapus berbulan-bulan laba</h3>
+<p><strong>Rantai.</strong> Friksi verifikasi diturunkan untuk menaikkan konversi. Satu penyewa tidak mengembalikan atau merusak unit mahal. Kerugian satu unit menghapus kontribusi puluhan booking.</p>
+<p><strong>Angka.</strong> Cancan memakai foto KTP/KK plus deposit Rp100rb. Satu Doona seharga Rp6,6jt. Riset menghitungnya setara 66 rental hangus. Dari sisi kontribusi: Doona menghasilkan Rp540rb per bulan dari 3 booking, sekitar Rp180rb per booking (model). Mengganti satu unit butuh sekitar 37 booking kontribusi penuh (model: Rp6,6jt / Rp180rb). Itu 12 bulan, yaitu seluruh masa payback unit tersebut.</p>
+<p><strong>Kenapa membunuh.</strong> Ini dilema nyata. Kiddy menang sebagian karena tanpa deposit. Jaminan ketat menurunkan konversi, jaminan longgar membuka risiko.</p>
+<p><strong>Indikator dini.</strong> Rasio nilai unit terhadap jaminan per SKU. Verifikasi berlapis untuk SKU di atas Rp5jt (Doona, Hamilton X1, Yoyo2) dan longgar untuk SKU murah. Detail kebijakan ada di bab 8.</p>
+<h3 id="6-6-perang-harga-di-kota-padat">6.6 Perang harga di kota padat</h3>
+<p><strong>Rantai.</strong> Kamu masuk ke pasar dengan 12+ pemain. Tidak ada pembeda. Satu-satunya tuas yang tersisa adalah harga. Tarif turun. Breakeven okupansi naik di atas 67-71%. Okupansi setinggi itu sulit dicapai di pasar yang dibagi banyak pemain.</p>
+<p><strong>Bukti.</strong> Jabodetabek punya 12+ pemain. Rentang harga sudah sangat lebar (stroller Rp70-680rb per 3 hari di Kiddy saja).</p>
+<p><strong>Kenapa membunuh.</strong> Margin sewa murni sudah tipis. Di utilisasi 24 hari, laba armada 15 unit hanya Rp593rb. Diskon 10% pada sewa Rp9,0jt (model: 15 x 24 / 7 x Rp175rb) memotong sekitar Rp900rb. Laba berubah jadi rugi.</p>
+<p><strong>Indikator dini.</strong> Kalau alasan utama pelanggan memilih kamu adalah &quot;lebih murah&quot;, kamu sedang berada di jalur ini.</p>
+<h3 id="6-7-katalog-tanpa-sistem">6.7 Katalog tanpa sistem</h3>
+<p><strong>Rantai.</strong> Katalog membesar. Inventori dicatat manual atau di kepala founder. Satu unit dipesan dua orang untuk tanggal yang sama. Satu pelanggan kecewa, unit telat, ulasan buruk. Di kategori yang dijual lewat kepercayaan, satu ulasan buruk merusak konversi untuk banyak calon pelanggan berikutnya.</p>
+<p><strong>Bukti.</strong> Riset mencatat risiko 1.600 SKU tanpa inventori real-time. Arsitektur durasi ganda (pola 4) memperparah risiko ini, karena paket panjang dan trip pendek berebut kalender unit yang sama.</p>
+<p><strong>Kenapa membunuh.</strong> Masalahnya tidak terlihat di awal. Dengan 15 unit, catatan manual masih bisa jalan. Masalah baru muncul saat penitip masuk dan katalog membesar, yaitu tepat saat bisnis mulai tumbuh.</p>
+<p><strong>Indikator dini.</strong> Jumlah insiden double booking atau keterlambatan per bulan. Satu insiden sudah cukup sebagai alasan memasang sistem kalender sebelum menambah unit.</p>
+<h3 id="6-8-ringkasan-pola-gagal">6.8 Ringkasan pola gagal</h3>
+<div class="table-wrap"><table><thead><tr><th>Pola gagal</th><th>Pemicu</th><th>Kerugian</th><th>Indikator dini</th></tr></thead><tbody><tr><td>Okupansi rendah</td><td>Tambah unit saat sepi</td><td>Rugi Rp2,0jt/bulan di 12 hari</td><td>Utilisasi &lt;55% bulan ke-3</td></tr><tr><td>SKU payback buruk</td><td>Katalog ikut tren</td><td>Box 25 bulan, mainan negatif</td><td>Capex di SKU &gt;15 bulan</td></tr><tr><td>Ketergantungan travel</td><td>Guncangan eksternal</td><td>Pendapatan ke nol</td><td>Porsi pendapatan travel</td></tr><tr><td>Plafon antar</td><td>Founder antar sendiri</td><td>Pesanan akhir pekan hilang</td><td>Penolakan per hari</td></tr><tr><td>Jaminan tipis</td><td>Kehilangan unit mahal</td><td>Doona = 12 bulan kontribusi</td><td>Rasio nilai unit vs jaminan</td></tr><tr><td>Perang harga</td><td>Masuk kota padat tanpa pembeda</td><td>Laba Rp593rb jadi rugi</td><td>Alasan beli = murah</td></tr><tr><td>Katalog tanpa sistem</td><td>Katalog membesar</td><td>Double booking, ulasan buruk</td><td>Insiden per bulan</td></tr></tbody></table></div>
+<p>Bab berikutnya menerjemahkan pola menang dan pola gagal ini ke angka operasi dan keputusan eksekusi (lihat bab 7 dan bab 8).</p>
+</article><article class="chapter" id="ch-7-ekonomi-unit-hitungan-lengkap-dan-sensitivitas"><header class="chapter-head"><span class="chapter-num">7</span><h2>Ekonomi unit: hitungan lengkap dan sensitivitas</h2></header>
+<h3 id="7-1-asumsi-yang-dipakai-di-bab-7-9">7.1 Asumsi yang dipakai di bab 7–9</h3>
+<p>Biaya dasar diambil dari riset: cuci Rp35–50rb per booking, antar Rp35–40rb per booking, gudang dan utilitas Rp60rb per unit per bulan, maintenance 2% capex per bulan. Riset tidak memecah biaya per SKU. Pecahan di bawah adalah rekonstruksi yang menghasilkan angka payback acuan (model):</p>
+<ul><li>Pompa: cuci Rp40rb + antar Rp35rb = Rp75rb/booking.</li><li>Travel stroller dan car seat: Rp50rb + Rp35rb = Rp85rb/booking.</li><li>Stroller premium: Rp50rb + Rp40rb = Rp90rb/booking.</li><li>Box bayi Rp80rb/booking. Mainan Rp75rb/booking.</li></ul>
+<p>Kontribusi = pendapatan − biaya variabel − biaya tetap unit. Payback = capex ÷ kontribusi. Gaji dan penyusutan belum masuk di 7.2.</p>
+<h3 id="7-2-ekonomi-per-sku">7.2 Ekonomi per SKU</h3>
+<div class="table-wrap"><table><thead><tr><th>SKU (capex)</th><th>Pendapatan/bulan</th><th>Biaya variabel</th><th>Biaya tetap unit</th><th>Kontribusi (payback)</th></tr></thead><tbody><tr><td>Pompa Spectra 9+ (Rp2,19jt)</td><td>3 × Rp200rb = Rp600rb</td><td>3 × Rp75rb = Rp225rb</td><td>Rp60rb + Rp44rb = Rp104rb</td><td>Rp271rb (8 bln)</td></tr><tr><td>Travel stroller (Rp4,6jt)</td><td>4 × Rp199rb = Rp796rb</td><td>4 × Rp85rb = Rp340rb</td><td>Rp60rb + Rp92rb = Rp152rb</td><td>Rp304rb (15 bln)</td></tr><tr><td>Stroller premium (Rp8jt)</td><td>3 × Rp350rb = Rp1.050rb</td><td>3 × Rp90rb = Rp270rb</td><td>Rp60rb + Rp160rb = Rp220rb</td><td>Rp560rb (14 bln)</td></tr><tr><td>Car seat/Doona (Rp6,6jt)</td><td>3 × Rp329rb = Rp987rb</td><td>3 × Rp85rb = Rp255rb</td><td>Rp60rb + Rp132rb = Rp192rb</td><td>Rp540rb (12 bln)</td></tr><tr><td>Box bayi (Rp1,95jt)</td><td>0,8 × Rp300rb = Rp240rb</td><td>0,8 × Rp80rb = Rp64rb</td><td>Rp60rb + Rp39rb = Rp99rb</td><td>Rp77rb (25 bln)</td></tr><tr><td>Bundel mainan (Rp1,2jt)</td><td>0,7 × Rp150rb = Rp105rb</td><td>0,7 × Rp75rb ≈ Rp53rb</td><td>Rp60rb + Rp24rb = Rp84rb</td><td>−Rp32rb (tidak balik)</td></tr></tbody></table></div>
+<p>Pompa menang bukan karena harganya mahal. Pompa menang karena satu booking bernilai 9,1% dari harga beli (200 ÷ 2.190). Travel stroller hanya 4,3% (199 ÷ 4.600). Car seat 5,0%. Stroller premium 4,4% (model).</p>
+<p>Box bayi kalah karena alasan lain. Satu booking bernilai 15,4% harga beli, tapi unit tertahan sebulan penuh dan rata-rata hanya 0,8 booking per bulan. Biaya gudang Rp60rb jalan terus saat unit menganggur.</p>
+<p>Aturan praktis: SKU yang harga per booking-nya di bawah 5% harga beli butuh 4 booking per bulan atau lebih. Kalau tidak, payback lewat 12 bulan.</p>
+<h3 id="7-3-armada-15-unit-dari-mana-breakeven-67-71">7.3 Armada 15 unit: dari mana breakeven 67–71%</h3>
+<p>Armada acuan: 15 unit, capex Rp52,5jt, harga Rp175rb per minggu.</p>
+<p>Rantai hitungnya (model):</p>
+<ol><li>Pendapatan per hari tersewa = Rp175rb ÷ 7 = Rp25rb.</li><li>Biaya variabel per booking Rp75rb dibagi 7 hari = Rp10,7rb per hari tersewa.</li><li>Kontribusi per hari tersewa = Rp25rb − Rp10,7rb = Rp14,3rb per unit.</li><li>Satu hari tersewa untuk seluruh armada = 15 × Rp14,3rb = Rp214rb.</li><li>Biaya tetap armada = gudang Rp0,9jt + maintenance Rp1,05jt + penyusutan Rp2,6jt (capex ÷ ~20 bulan) = Rp4,55jt/bulan.</li><li>Breakeven = Rp4,55jt ÷ Rp214rb = 21,2 hari = 71%.</li></ol>
+<div class="table-wrap"><table><thead><tr><th>Hari tersewa/bulan</th><th>Okupansi</th><th>Pendapatan</th><th>Kontribusi</th><th>Laba (rugi)</th></tr></thead><tbody><tr><td>12</td><td>40%</td><td>Rp4,5jt</td><td>Rp2,57jt</td><td>(Rp2,0jt)</td></tr><tr><td>16</td><td>53%</td><td>Rp6,0jt</td><td>Rp3,43jt</td><td>(Rp1,1jt)</td></tr><tr><td>20</td><td>67%</td><td>Rp7,5jt</td><td>Rp4,29jt</td><td>(Rp264rb)</td></tr><tr><td>21,2</td><td>71%</td><td>Rp7,95jt</td><td>Rp4,55jt</td><td>0</td></tr><tr><td>24</td><td>80%</td><td>Rp9,0jt</td><td>Rp5,14jt</td><td>Rp593rb</td></tr></tbody></table></div>
+<p>Perhatikan jebakannya. Angka rugi di atas sudah memasukkan penyusutan Rp2,6jt. Secara kas, di 12 hari pun rekening masih plus Rp0,6jt (Rp2,57jt − Rp1,95jt). Founder melihat saldo naik dan merasa untung. Padahal modal Rp52,5jt tidak pernah kembali. Ini cara pemain kecil mati pelan: kas positif, aset habis, tidak ada uang untuk mengganti unit.</p>
+<h3 id="7-4-sensitivitas-biaya-antar-per-booking">7.4 Sensitivitas biaya antar per booking</h3>
+<p>Asumsi tetap: Rp175rb/minggu, cuci Rp40rb, biaya tetap Rp4,55jt.</p>
+<div class="table-wrap"><table><thead><tr><th>Antar/booking</th><th>Biaya variabel/hari</th><th>Kontribusi armada/hari</th><th>Breakeven</th><th>Okupansi</th></tr></thead><tbody><tr><td>Rp25rb</td><td>Rp9,3rb</td><td>Rp236rb</td><td>19,3 hari</td><td>64%</td></tr><tr><td>Rp35rb</td><td>Rp10,7rb</td><td>Rp214rb</td><td>21,2 hari</td><td>71%</td></tr><tr><td>Rp50rb</td><td>Rp12,9rb</td><td>Rp182rb</td><td>25,0 hari</td><td>83%</td></tr><tr><td>Rp70rb</td><td>Rp15,7rb</td><td>Rp139rb</td><td>32,7 hari</td><td>tidak mungkin</td></tr></tbody></table></div>
+<p>Kenaikan ongkos antar Rp15rb per booking menggeser breakeven 4 hari. Pelanggan di pinggir kota dengan ongkos ojek Rp70rb membuat unit rugi meski tersewa penuh.</p>
+<p>Keputusannya: ongkir dibayar pelanggan. Tarif zona, bukan gratis ongkir. Biaya antar yang kamu tanggung harus di bawah Rp35rb per booking. Caranya: rute dikelompokkan per hari dan per zona.</p>
+<h3 id="7-5-sensitivitas-durasi-sewa">7.5 Sensitivitas durasi sewa</h3>
+<p>Tarif per hari ditahan di Rp25rb supaya efek durasi terlihat murni. Biaya per booking tetap Rp75rb.</p>
+<div class="table-wrap"><table><thead><tr><th>Durasi booking</th><th>Biaya variabel/hari</th><th>Kontribusi armada/hari</th><th>Breakeven</th><th>Okupansi</th></tr></thead><tbody><tr><td>3 hari</td><td>Rp25,0rb</td><td>Rp0</td><td>tidak pernah</td><td>—</td></tr><tr><td>4 hari</td><td>Rp18,8rb</td><td>Rp94rb</td><td>48,5 hari</td><td>tidak mungkin</td></tr><tr><td>7 hari</td><td>Rp10,7rb</td><td>Rp214rb</td><td>21,2 hari</td><td>71%</td></tr><tr><td>14 hari</td><td>Rp5,4rb</td><td>Rp295rb</td><td>15,4 hari</td><td>52%</td></tr><tr><td>30 hari</td><td>Rp2,5rb</td><td>Rp338rb</td><td>13,5 hari</td><td>45%</td></tr></tbody></table></div>
+<p>Biaya cuci dan antar dibayar per booking, bukan per hari. Makin pendek durasinya, makin besar beban per harinya. Sewa 3 hari dengan tarif harian mingguan tidak menutup biaya cuci-antar sama sekali.</p>
+<p>Agar sewa 3 hari menghasilkan kontribusi harian setara sewa 7 hari, tarif per harinya harus Rp14,3rb + Rp25rb = Rp39,3rb. Untuk unit rata-rata armada, itu Rp118rb per 3 hari (model). Untuk 4 hari: Rp14,3rb + Rp18,8rb = Rp33,1rb per hari, atau Rp132rb per 4 hari.</p>
+<p>Ini alasan ekonomi di balik temuan riset bahwa tarif harian trip rental 3–5x tarif subscription. Kenaikan itu bukan keserakahan. Kenaikan itu biaya logistik yang dibagi ke hari yang lebih sedikit.</p>
+<h3 id="7-6-kenapa-biaya-tetap-mengubah-segalanya">7.6 Kenapa biaya tetap mengubah segalanya</h3>
+<p>Model 7.3 belum memasukkan satu orang pun yang digaji. Tambahkan satu admin-kurir paruh waktu Rp2,5jt (estimasi):</p>
+<ul><li>Basis akuntansi: biaya tetap Rp7,05jt ÷ Rp214rb = 32,9 hari. Mustahil. Sewa murni 15 unit tidak bisa menggaji orang dan mengembalikan modal sekaligus.</li><li>Basis kas: biaya tetap Rp1,95jt + Rp2,5jt = Rp4,45jt ÷ Rp214rb = 20,8 hari (69%). Kas impas, modal tetap tidak kembali.</li></ul>
+<p>Per unit milik di okupansi 80% (24 hari): kontribusi Rp343rb − biaya tetap kas Rp130rb = Rp213rb kas. Dikurangi penyusutan Rp175rb, sisa laba ekonomis Rp38rb per unit. Untuk menutup gaji Rp2,5jt dari laba ekonomis sewa saja, kamu butuh 66 unit milik dengan okupansi 80% (model).</p>
+<p>Kesimpulannya: gaji pertama tidak dibayar dari sewa. Gaji pertama dibayar dari laundry, retail eks-sewa, dan event yang menumpang di aset dan staf yang sama. Itu sebabnya tumpukan acuan (sewa Rp7,5jt + laundry Rp1,3jt + retail Rp1,5jt + event Rp4jt = gross Rp14,3jt, net Rp5,7jt, margin 39%, payback 9,3 bulan) adalah model bisnisnya, bukan bonus.</p>
+<h3 id="7-7-penitip-50-50-bagi-apa-dan-kenapa-itu-penting">7.7 Penitip 50:50: bagi apa, dan kenapa itu penting</h3>
+<p>Pola Zaida (penitip, bagi hasil 50:50) menumbuhkan armada tanpa capex. Mekanismenya: pemilik barang menganggur dapat penghasilan, kamu dapat stok gratis, risiko barang menganggur ditanggung bersama.</p>
+<p>Masalahnya, riset tidak menyebut 50:50 dari apa. Dua versi, okupansi 70% (21 hari), tarif Rp25rb/hari (model):</p>
+<ul><li>50% dari pendapatan kotor: bagianmu Rp12,5rb/hari − biaya variabel Rp10,7rb = Rp1,8rb/hari × 21 = Rp38rb − gudang Rp60rb = <strong>rugi Rp22rb per unit per bulan.</strong></li><li>50% dari pendapatan setelah cuci-antar: (Rp25rb − Rp10,7rb) ÷ 2 = Rp7,15rb/hari × 21 = Rp150rb − gudang Rp60rb = <strong>untung Rp90rb per unit per bulan.</strong></li></ul>
+<p>Penitip tetap menerima Rp150rb per bulan dari barang yang tadinya menganggur. Kontraknya harus versi kedua.</p>
+<p>Apa yang memfalsifikasi pola ini: kalau dalam 60 hari program penitip berjalan, kurang dari 5 unit masuk, atau lebih dari 20% unit titipan datang dalam kondisi yang tidak lolos standar higiene, pola ini tidak jalan di kotamu. Armada kembali ke pembelian sendiri dan target pertumbuhan di bab 9 harus diturunkan.</p>
+</article><article class="chapter" id="ch-8-arsitektur-harga-tangga-harga-konkret-per-produk"><header class="chapter-head"><span class="chapter-num">8</span><h2>Arsitektur harga: tangga harga konkret per produk</h2></header>
+<h3 id="8-1-tangga-harga">8.1 Tangga harga</h3>
+<p>Harga di bawah (estimasi) berangkat dari harga acuan per SKU dan rentang pasar live. Kolom &quot;3 hari&quot; juga berlaku sebagai paket weekend: ambil Jumat sore, kembali Senin pagi.</p>
+<div class="table-wrap"><table><thead><tr><th>Produk (capex)</th><th>3 hari / weekend</th><th>7 hari</th><th>14 hari</th><th>30 hari</th></tr></thead><tbody><tr><td>Pompa Spectra 9+ (Rp2,19jt)</td><td>tidak dijual</td><td>Rp200rb</td><td>Rp349rb</td><td>Rp549rb; 90 hari Rp1,09jt</td></tr><tr><td>Travel stroller Joie Pact/Yoyo2 (Rp4,6jt)</td><td>Rp199rb</td><td>Rp329rb</td><td>Rp549rb</td><td>tidak dijual</td></tr><tr><td>Stroller premium Hamilton X1 (Rp8jt)</td><td>Rp350rb</td><td>Rp599rb</td><td>Rp999rb</td><td>tidak dijual</td></tr><tr><td>Car seat/Doona (Rp6,6jt)</td><td>Rp329rb</td><td>Rp549rb</td><td>Rp899rb</td><td>Rp1,49jt</td></tr><tr><td>Box bayi Babyelle (Rp1,95jt)</td><td>tidak dijual</td><td>Rp149rb</td><td>Rp229rb</td><td>Rp300rb; 90 hari Rp749rb</td></tr></tbody></table></div>
+<p>Bundel mainan tidak masuk katalog reguler. Mainan hanya masuk lewat penitip (tanpa capex) dan paket event.</p>
+<h3 id="8-2-margin-per-booking-dan-lantai-harga">8.2 Margin per booking dan lantai harga</h3>
+<p>Lantai harga = biaya variabel per booking + (biaya tetap unit + penyusutan capex ÷ 20 bulan) × durasi ÷ 21 hari tersewa. Artinya: harga terendah yang masih mengembalikan modal pada okupansi 70% (model).</p>
+<p>Contoh pompa: biaya bulanan Rp60rb + Rp44rb + Rp110rb = Rp213rb. Lantai 7 hari = Rp75rb + Rp213rb × 7 ÷ 21 = Rp146rb.</p>
+<div class="table-wrap"><table><thead><tr><th>Produk, durasi utama</th><th>Harga</th><th>Biaya variabel</th><th>Margin/booking</th><th>Lantai harga</th></tr></thead><tbody><tr><td>Pompa, 7 hari</td><td>Rp200rb</td><td>Rp75rb</td><td>Rp125rb</td><td>Rp146rb</td></tr><tr><td>Travel stroller, 3 hari</td><td>Rp199rb</td><td>Rp85rb</td><td>Rp114rb</td><td>Rp140rb</td></tr><tr><td>Stroller premium, 3 hari</td><td>Rp350rb</td><td>Rp90rb</td><td>Rp260rb</td><td>Rp179rb</td></tr><tr><td>Car seat/Doona, 3 hari</td><td>Rp329rb</td><td>Rp85rb</td><td>Rp244rb</td><td>Rp160rb</td></tr><tr><td>Box bayi, 30 hari</td><td>Rp300rb</td><td>Rp80rb</td><td>Rp220rb</td><td>Rp361rb</td></tr></tbody></table></div>
+<p>Cek silang: untuk unit rata-rata armada (capex Rp3,5jt), lantai 7 hari = Rp75rb + Rp305rb ÷ 3 = Rp177rb. Itu hampir persis Rp175rb harga mingguan acuan. Jadi harga acuan adalah harga impas, bukan harga untung.</p>
+<p>Box bayi di Rp300rb/bulan berada di bawah lantai Rp361rb. Harga itu baru impas di okupansi sekitar 90%. Box hanya layak lewat penitip (tanpa penyusutan) atau paket 90 hari. Ini menjelaskan payback 25 bulan di bab 7.</p>
+<p>Soal pompa bulanan: Mamasewa menampilkan Rp6.071/hari, setara Rp182rb/bulan, dan Mamasewa beroperasi di Bandung. Lantai pompa 30 hari kita Rp380rb. Kita tidak bisa dan tidak akan bersaing di paket pompa panjang. Harga riil per durasi di Mamasewa belum terverifikasi (lihat bab riset, gap terbuka). Kalau setelah 60 hari lebih dari separuh calon penyewa pompa 30 hari memilih paket panjang Mamasewa, hapus paket 30 dan 90 hari pompa. Fokuskan pompa di 7–14 hari pasca-lahir.</p>
+<h3 id="8-3-alasan-psikologis-di-balik-angkanya">8.3 Alasan psikologis di balik angkanya</h3>
+<ul><li><strong>Angka 199/349/549.</strong> Angka di bawah ambang ratusan dibaca sebagai kelompok harga yang lebih rendah. Tarif 3 hari tetap tampil sebagai &quot;seratus sekian&quot; walau margin per bookingnya tertinggi.</li><li><strong>7 hari ≈ 1,65x harga 3 hari.</strong> Kalimat jualannya: &quot;tambah Rp130rb, dapat 4 hari lagi.&quot; Pelanggan pindah ke durasi lebih panjang. Biaya cuci-antar per hari turun dari Rp28,3rb ke Rp12,1rb (model, travel stroller).</li><li><strong>Weekend = harga 3 hari untuk 4 hari kalender.</strong> Ini celah durasi Patta. Pelanggan merasa dapat bonus satu hari. Biayamu nyaris nol karena unit jarang disewa Senin pagi.</li><li><strong>Paket 90 hari pompa Rp1,09jt = 50% harga beli.</strong> Perbandingan sewa vs beli harus selalu menang telak. Di atas 50%, pelanggan akan berpikir &quot;beli saja.&quot;</li><li><strong>Paket panjang tampil per hari, paket pendek tampil total.</strong> Paket 90 hari box ditulis Rp8.322/hari. Paket weekend stroller ditulis Rp199rb. Ini taktik Mamasewa, dipakai terbalik untuk produk pendek.</li><li><strong>Doona 30 hari Rp1,49jt tampil berdampingan dengan harga beli Rp6,6jt.</strong> Selisih Rp5,1jt menjadi argumen penjualan.</li></ul>
+<h3 id="8-4-pola-menang-arsitektur-durasi-ganda">8.4 Pola menang: arsitektur durasi ganda</h3>
+<p>Mekanisme: durasi pendek membawa tarif harian tinggi yang menutup biaya cuci-antar dan mengisi akhir pekan. Durasi panjang menambal hari kerja yang kosong dengan biaya logistik per hari yang rendah. Hasilnya, satu unit mendapat dua jenis permintaan yang jatuh di hari berbeda.</p>
+<p>Yang memfalsifikasi: kalau setelah 60 hari lebih dari 70% booking adalah 3 hari/weekend dan okupansi tetap di bawah 55%, durasi panjang tidak terjual. Unit hanya terisi di akhir pekan. Saat itu harga 7 dan 14 hari harus diuji turun ke dekat lantai, bukan harga 3 hari yang dipotong.</p>
+<h3 id="8-5-aturan-diskon-yang-tidak-boleh-dilanggar">8.5 Aturan diskon yang tidak boleh dilanggar</h3>
+<ol><li><strong>Tidak ada harga di bawah lantai</strong> di tabel 8.2. Lantai dihitung ulang tiap kuartal memakai okupansi aktual.</li><li><strong>Diskon diberikan dalam bentuk hari, bukan rupiah.</strong> Hanya untuk unit yang kalendernya kosong 7 hari ke depan.</li><li><strong>Nol diskon untuk pengambilan Jumat–Minggu dan tanggal merah.</strong> Hari-hari itu terjual sendiri.</li><li><strong>Ongkir dibayar pelanggan.</strong> Gratis ongkir hanya untuk booking minimal 14 hari. Alasannya ada di 7.4.</li><li><strong>Jaminan tidak dipakai sebagai alat diskon.</strong> Unit di atas Rp4jt wajib verifikasi identitas plus deposit (usulan Rp500rb, estimasi). Dengan deposit Rp100rb, satu Doona hilang setara 66 rental.</li><li><strong>Penitip tidak menentukan harga.</strong> Satu katalog, satu tangga harga.</li><li><strong>Referral dan affiliate maksimal 10% dari harga</strong>, dan tetap tidak boleh menembus lantai.</li></ol>
+</article><article class="chapter" id="ch-9-tiga-skenario-keuangan-12-bulan"><header class="chapter-head"><span class="chapter-num">9</span><h2>Tiga skenario keuangan 12 bulan</h2></header>
+<h3 id="9-1-mesin-hitungnya">9.1 Mesin hitungnya</h3>
+<p>Semua angka di tabel adalah (model). Setiap baris bisa kamu hitung ulang dengan rumus ini:</p>
+<ul><li><strong>Pendapatan sewa</strong> = (unit milik + unit titipan) × hari tersewa × Rp25rb.</li><li><strong>Kontribusi unit milik</strong> = hari tersewa × Rp14,3rb − Rp130rb (gudang + maintenance).</li><li><strong>Kontribusi unit titipan</strong> = hari tersewa × Rp7,15rb − Rp60rb (skema 7.7).</li><li><strong>Margin aliran lain</strong> (estimasi): laundry 50%, retail eks-sewa 30%, event 55%.</li><li><strong>Overhead tunai</strong> (estimasi): Rp2,5jt untuk satu admin-kurir paruh waktu plus tools. Naik ke Rp4,0jt saat perjalanan antar-jemput melewati 6 per orang per hari, karena riset Cancan menunjukkan plafon 5–6 pengantaran per hari per orang. Naik ke Rp5,5jt untuk orang ketiga.</li><li><strong>Net</strong> = kas operasional sebelum pajak, tanpa gaji Fatin, tanpa penyusutan.</li><li><strong>Capex</strong> dipotong langsung dari kas pada bulan pembelian.</li><li><strong>Bulan 0</strong> = −Rp60jt: armada Rp52,5jt + setup Rp7,5jt (sterilizer, rak, foto produk, situs).</li></ul>
+<p>Pendapatan dipukul rata Rp25rb per hari tersewa. Tarif 3 hari di bab 8 lebih tinggi. Selisih itu adalah upside yang sengaja tidak dihitung.</p>
+<p>Event per kuartal mengikuti rekomendasi riset. Angkanya jauh di bawah BBW Zaida (Rp260jt dalam 12 hari) karena itu satu kejadian, bukan pola yang bisa diasumsikan.</p>
+<h3 id="9-2-bear-okupansi-macet-di-bawah-60">9.2 Bear: okupansi macet di bawah 60%</h3>
+<p>ools berbayar dihentikan kecuali WA Business dan kalender booking. Pemotongan itu bukan pilihan. Tanpa itu, skenario ini tidak bertahan sampai bulan 5.</p>
+<p>Bear bukan skenario &quot;tidak ada pelanggan&quot;. Pelanggan ada, tapi datang dengan pola yang salah. Mereka menyewa stroller dan car seat untuk 3–4 hari di akhir pekan. Pompa dan box bayi, dua SKU yang seharusnya mengunci kalender, tidak terjual di paket mingguan. Hasilnya, hari tersewa per unit tertahan di 8–16 hari per bulan. Itu 27–53% okupansi, jauh di bawah titik impas 20–21 hari.</p>
+<p>Penitip juga ragu. Ibu-ibu yang punya stroller nganggur melihat akun yang belum ramai dan memilih menunggu. Titipan hanya naik ke 3 unit dan berhenti di sana. Laundry jalan kecil, sekitar Rp0,6jt gross per bulan (estimasi), karena hanya ditawarkan ke penyewa yang sudah ada. Tidak ada event. Tanpa okupansi yang meyakinkan, tidak ada hotel atau baby fair yang mau memakai armada yang belum terbukti.</p>
+<p>Angka di bawah memakai mesin 9.1 dengan satu perubahan: overhead Rp1,5jt mulai bulan 4. Armada ditulis sebagai unit milik + unit titipan.</p>
+<div class="table-wrap"><table><thead><tr><th>Bulan</th><th>Armada</th><th>Okupansi</th><th>Gross</th><th>Net</th></tr></thead><tbody><tr><td>1</td><td>15 + 0</td><td>27%</td><td>Rp3,00jt</td><td>−Rp2,73jt</td></tr><tr><td>2</td><td>15 + 0</td><td>37%</td><td>Rp4,53jt</td><td>−Rp1,89jt</td></tr><tr><td>3</td><td>15 + 2</td><td>40%</td><td>Rp5,70jt</td><td>−Rp1,52jt</td></tr><tr><td>4</td><td>15 + 3</td><td>43%</td><td>Rp6,45jt</td><td>−Rp0,26jt</td></tr><tr><td>5</td><td>15 + 3</td><td>47%</td><td>Rp6,90jt</td><td>−Rp0,03jt</td></tr><tr><td>6</td><td>15 + 3</td><td>47%</td><td>Rp6,90jt</td><td>−Rp0,03jt</td></tr><tr><td>7</td><td>15 + 3</td><td>50%</td><td>Rp7,35jt</td><td>Rp0,21jt</td></tr><tr><td>8</td><td>15 + 3</td><td>50%</td><td>Rp7,35jt</td><td>Rp0,21jt</td></tr><tr><td>9</td><td>15 + 3</td><td>53%</td><td>Rp7,80jt</td><td>Rp0,45jt</td></tr><tr><td>10</td><td>15 + 3</td><td>53%</td><td>Rp7,80jt</td><td>Rp0,45jt</td></tr><tr><td>11</td><td>15 + 3</td><td>50%</td><td>Rp7,35jt</td><td>Rp0,21jt</td></tr><tr><td>12</td><td>15 + 3</td><td>53%</td><td>Rp7,80jt</td><td>Rp0,45jt</td></tr></tbody></table></div>
+<p>Semua angka (model). Kas kumulatif mulai dari −Rp60jt di bulan 0. Kas turun ke titik terdalam −Rp66,5jt di bulan 6, lalu naik pelan ke −Rp64,5jt di bulan 12. Kalau cadangan modal kerja di luar capex hanya Rp7,5jt (estimasi), cadangan itu tersisa sekitar Rp1jt di bulan 6. Tanpa pemotongan overhead ke Rp1,5jt, overhead Rp4,0jt membuat cadangan habis di bulan 4. Dengan pemotongan, kas tidak habis. Tapi satu unit Doona hilang atau satu stroller rusak berat sudah cukup untuk menghabiskannya.</p>
+<p>Masalah yang lebih besar adalah capex. Dengan net rata-rata Rp0,3jt per bulan di semester kedua (model), Rp60jt tidak akan kembali dalam hitungan tahun. Bear tidak membunuh bisnis dengan cepat. Bear membuat Fatin bekerja gratis sebagai kurir sambil modalnya terkunci di gudang.</p>
+<h3 id="9-3-base-okupansi-naik-pelan">9.3 Base: okupansi naik pelan</h3>
+<p>Base memakai overhead mesin penuh: Rp2,5jt, Rp4,0jt, lalu Rp5,5jt. Unit milik tetap 15. Pertumbuhan armada datang dari titipan, naik bertahap sampai 15 unit. Event masuk satu kali per kuartal: Rp2jt, Rp3jt, Rp4jt, Rp4jt gross (estimasi). Retail eks-sewa mulai bulan 7.</p>
+<div class="table-wrap"><table><thead><tr><th>Bulan</th><th>Armada</th><th>Okupansi</th><th>Gross</th><th>Net</th></tr></thead><tbody><tr><td>1</td><td>15 + 0</td><td>33%</td><td>Rp4,15jt</td><td>−Rp2,11jt</td></tr><tr><td>2</td><td>15 + 2</td><td>43%</td><td>Rp6,13jt</td><td>−Rp1,30jt</td></tr><tr><td>3</td><td>15 + 4</td><td>50%</td><td>Rp9,93jt</td><td>Rp0,46jt</td></tr><tr><td>4</td><td>15 + 6</td><td>57%</td><td>Rp9,93jt</td><td>−Rp1,43jt</td></tr><tr><td>5</td><td>15 + 8</td><td>60%</td><td>Rp11,35jt</td><td>−Rp1,04jt</td></tr><tr><td>6</td><td>15 + 10</td><td>63%</td><td>Rp16,08jt</td><td>Rp1,13jt</td></tr><tr><td>7</td><td>15 + 10</td><td>67%</td><td>Rp14,70jt</td><td>Rp0,07jt</td></tr><tr><td>8</td><td>15 + 12</td><td>67%</td><td>Rp15,80jt</td><td>Rp0,29jt</td></tr><tr><td>9</td><td>15 + 12</td><td>70%</td><td>Rp20,98jt</td><td>Rp1,44jt</td></tr><tr><td>10</td><td>15 + 14</td><td>70%</td><td>Rp18,03jt</td><td>−Rp0,58jt</td></tr><tr><td>11</td><td>15 + 14</td><td>73%</td><td>Rp18,75jt</td><td>−Rp0,27jt</td></tr><tr><td>12</td><td>15 + 15</td><td>73%</td><td>Rp23,30jt</td><td>Rp2,03jt</td></tr></tbody></table></div>
+<p>Semua angka (model). Kas kumulatif turun dari −Rp60jt ke titik terdalam −Rp65,4jt di bulan 5. Setelah itu kas naik dan turun mengikuti event, lalu ditutup di −Rp61,3jt pada bulan 12. Dua belas bulan operasi menghasilkan kas operasional kumulatif sekitar −Rp1,3jt. Bisnisnya hidup, tapi capex belum mulai kembali.</p>
+<p>Bulan kritis ada dua. Pertama, bulan 4. Okupansi naik ke 57%, tapi overhead naik dari Rp2,5jt ke Rp4,0jt di bulan yang sama dan tidak ada event. Net jatuh ke −Rp1,43jt setelah bulan 3 sempat positif. Di titik ini godaan terbesar adalah membeli unit baru untuk &quot;mengejar volume&quot;. Itu keputusan yang salah. Unit milik baru menambah Rp130rb biaya tetap per unit sebelum satu hari pun tersewa.</p>
+<p>Kedua, bulan 10. Overhead naik ke Rp5,5jt untuk orang ketiga. Okupansi 70% belum cukup menutupnya tanpa event. Orang ketiga hanya boleh direkrut kalau pengantaran memang sudah melewati 6 per orang per hari. Kalau belum, tunda dan base berubah positif lebih cepat.</p>
+<p>Pola base jelas: bulan dengan event positif, bulan tanpa event tipis atau minus. Sewa menutup biaya. Aliran lain yang menghasilkan kas.</p>
+<h3 id="9-4-bull-satu-event-besar-di-kuartal-kedua">9.4 Bull: satu event besar di kuartal kedua</h3>
+<p>Bull mengasumsikan okupansi naik lebih cepat dan titipan tumbuh ke 25 unit. Pembedanya satu baris: event Rp40jt gross (estimasi) di bulan 5. Event kuartal lain Rp2jt, Rp4jt, Rp6jt. Overhead mengikuti mesin.</p>
+<div class="table-wrap"><table><thead><tr><th>Bulan</th><th>Armada</th><th>Okupansi</th><th>Gross</th><th>Net</th></tr></thead><tbody><tr><td>1</td><td>15 + 0</td><td>37%</td><td>Rp4,63jt</td><td>−Rp1,84jt</td></tr><tr><td>2</td><td>15 + 3</td><td>47%</td><td>Rp7,10jt</td><td>−Rp0,93jt</td></tr><tr><td>3</td><td>15 + 6</td><td>57%</td><td>Rp11,93jt</td><td>Rp1,17jt</td></tr><tr><td>4</td><td>15 + 9</td><td>63%</td><td>Rp12,60jt</td><td>−Rp0,59jt</td></tr><tr><td>5</td><td>15 + 12</td><td>70%</td><td>Rp55,68jt</td><td>Rp22,39jt</td></tr><tr><td>6</td><td>15 + 15</td><td>73%</td><td>Rp19,00jt</td><td>Rp1,28jt</td></tr><tr><td>7</td><td>15 + 18</td><td>73%</td><td>Rp21,25jt</td><td>Rp1,77jt</td></tr><tr><td>8</td><td>15 + 20</td><td>77%</td><td>Rp23,43jt</td><td>Rp2,42jt</td></tr><tr><td>9</td><td>15 + 22</td><td>77%</td><td>Rp29,08jt</td><td>Rp3,48jt</td></tr><tr><td>10</td><td>15 + 24</td><td>80%</td><td>Rp27,40jt</td><td>Rp1,98jt</td></tr><tr><td>11</td><td>15 + 25</td><td>80%</td><td>Rp28,00jt</td><td>Rp2,09jt</td></tr><tr><td>12</td><td>15 + 25</td><td>80%</td><td>Rp34,00jt</td><td>Rp5,39jt</td></tr></tbody></table></div>
+<p>Semua angka (model). Kas kumulatif turun ke −Rp62,2jt di bulan 4, lalu melompat ke −Rp39,8jt di bulan 5. Di bulan 12 kas ada di −Rp21,4jt. Dua belas bulan operasi menghasilkan sekitar Rp38,6jt kas. Tanpa event bulan 5, angka itu hanya sekitar Rp16,6jt, dan kas akhir tahun ada di sekitar −Rp43,4jt. Lebih dari separuh hasil tahun pertama datang dari 1 event.</p>
+<p>Pemicunya bukan keberuntungan. Ada tiga syarat yang harus sudah ada sebelum bulan 5. Pertama, armada gabungan di atas 25 unit, sehingga Fatin bisa mengisi satu area anak di baby fair atau family day tanpa mengosongkan kalender sewa reguler. Kedua, bukti higiene yang terdokumentasi, berupa konten before/after dan proses sterilisasi. Konten itulah yang meyakinkan penyelenggara. Ketiga, satu kontak penyelenggara yang didekati sejak bulan 2. Event bulan 5 diteken di bulan 3, bukan dicari di bulan 5.</p>
+<p>Pola ini sama dengan Zaida di BBW. Lompatan datang dari satu proyek, bukan dari sewa harian. Bedanya, angka Rp40jt di sini sengaja dipasang jauh di bawah Rp260jt milik Zaida.</p>
+<h3 id="9-5-cara-membaca-tiga-skenario-itu">9.5 Cara membaca tiga skenario itu</h3>
+<p>Secara finansial, bear dan base terlihat mirip di 3 bulan pertama. Selisih net per bulan hanya ratusan ribu rupiah. Perbedaannya ada di operasi, dan perbedaan itu sudah terlihat jauh sebelum muncul di laporan kas.</p>
+<p>Di bear, kalender berbentuk gigi gergaji. Unit keluar Jumat, kembali Senin, lalu diam empat hari. Setiap booking pendek berarti satu kali antar, satu kali jemput, dan satu kali cuci. Kapasitas tim habis untuk logistik, bukan untuk menjual. Di base, kalender berbentuk blok. Pompa dan box bayi keluar untuk 7, 14, atau 30 hari. Stroller mengisi celah di akhir pekan. Jumlah perjalanan per hari tersewa jauh lebih kecil, dan tim punya waktu untuk konten, penitip, dan event.</p>
+<p>Perbedaan kedua ada di penitip. Di base, penitip datang sendiri setelah melihat unit Fatin keluar terus di Instagram. Di bear, penitip harus dibujuk satu per satu dan tetap ragu. Jumlah titipan adalah cermin kepercayaan pasar. Angka ini bergerak lebih cepat daripada omzet.</p>
+<p>Sinyal paling awal adalah porsi hari tersewa dari booking 7 hari atau lebih, diukur di minggu 2 sampai 4. Kalau porsinya di atas separuh, kamu ada di jalur base atau lebih baik. Kalau di bawah sepertiga, kamu sedang masuk bear, meskipun jumlah booking terlihat ramai. Sinyal kedua adalah okupansi hari kerja, Senin sampai Kamis. Akhir pekan selalu terisi di ketiga skenario, jadi akhir pekan tidak memberi informasi apa pun.</p>
+<p>Bull tidak dibaca dari okupansi. Bull dibaca dari satu pertanyaan di bulan 3: sudah ada penyelenggara event yang meneken atau belum. Kalau belum, rencanakan dengan angka base.</p>
+</article><article class="chapter" id="ch-10-rencana-masuk-wedge-tunggal-90-hari-per-fase"><header class="chapter-head"><span class="chapter-num">10</span><h2>Rencana masuk: wedge tunggal, 90 hari per fase</h2></header>
+<h3 id="10-1-wedge-satu-kota-satu-komposisi-armada">10.1 Wedge: satu kota, satu komposisi armada</h3>
+<p>Kotanya Bandung. Alasannya ada di riset: @BaseBDG menanyakan tempat sewa stroller pada 2022, lalu menanyakan hal yang sama lagi pada Februari 2026. Pertanyaan itu tetap tanpa jawaban yang memuaskan. Permintaan ada, dan pasokannya tipis. Jabodetabek sudah diisi 12+ pemain. Masuk ke sana berarti menjadi pemain ke-13.</p>
+<p>Armada awal 15 unit milik. Komposisinya mengikuti payback, bukan selera:</p>
+<div class="table-wrap"><table><thead><tr><th>SKU</th><th>Unit</th><th>Capex/unit</th><th>Total</th><th>Payback</th></tr></thead><tbody><tr><td>Pompa ASI Spectra 9+</td><td>6</td><td>Rp2,19jt</td><td>Rp13,14jt</td><td>8 bln</td></tr><tr><td>Box bayi</td><td>3</td><td>Rp1,95jt</td><td>Rp5,85jt</td><td>25 bln</td></tr><tr><td>Travel stroller cabin-size</td><td>4</td><td>Rp4,6jt</td><td>Rp18,40jt</td><td>15 bln</td></tr><tr><td>Car seat / Doona</td><td>2</td><td>Rp6,6jt</td><td>Rp13,20jt</td><td>12 bln</td></tr><tr><td>Total</td><td>15</td><td>—</td><td>Rp50,59jt</td><td>—</td></tr></tbody></table></div>
+<p>Semua angka (estimasi). Sisa Rp1,9jt dari anggaran armada Rp52,5jt dipakai untuk suku cadang habis pakai seperti corong, selang pompa, dan sarung jok.</p>
+<p>Pompa adalah tulang punggung armada. Pompa punya payback tercepat dan disewa mingguan. Box bayi paybacknya lambat, tapi box disewa bulanan dan mengunci kalender. Stroller dan car seat adalah umpan konten dan pengisi akhir pekan. Tidak ada stroller premium dan tidak ada bundel mainan. Bundel mainan tidak pernah balik modal.</p>
+<p>Satu kota berarti satu kota. Tidak ada pengiriman luar kota sebelum hari 90, kecuali pelanggan menjemput sendiri.</p>
+<h3 id="10-2-fase-0-hari-14-sampai-0-persiapan-sebelum-uang-keluar">10.2 Fase 0 (hari -14 sampai 0): persiapan sebelum uang keluar</h3>
+<p>Belum ada unit yang dibeli. Fase ini membuktikan bahwa permintaan bisa dijangkau dengan biaya mendekati nol.</p>
+<ol><li>Buka akun IG dan WA Business khusus brand ini. Jangan memakai akun brand Fatin yang lain.</li><li>Tayangkan 10–15 konten sebelum stok datang: cerita kenapa bisnis ini dibuat, standar sterilisasi, dan daftar unit yang akan tersedia. Ini keunggulan Fatin. Pakai sejak hari pertama.</li><li>Buka daftar tunggu lewat WA. Tanya tanggal butuh, durasi, dan unit.</li><li>Masuk ke autobase X Bandung dan grup FB ibu lokal. Jawab pertanyaan sewa yang muncul. Jangan spam.</li><li>Kunci 2–3 calon penitip dari lingkaran mom community. Belum perlu ada unit yang masuk. Cukup kesepakatan skema bagi hasil.</li><li>Siapkan SOP sterilisasi, kalender booking, dan template verifikasi identitas plus deposit sesuai 8.5.</li></ol>
+<p>Syarat uang keluar: minimal 20 nama di daftar tunggu, dan minimal 8 dari mereka meminta durasi 7 hari atau lebih. Kalau syarat ini tidak tercapai, jangan beli 15 unit. Beli 6 pompa dulu dan ulangi fase 0 selama 14 hari.</p>
+<h3 id="10-3-fase-1-hari-1-30-bukti-pertama">10.3 Fase 1 (hari 1-30): bukti pertama</h3>
+<p>Tujuan fase ini satu: unit keluar dan kembali tanpa masalah. Belum ada target laba. Model base menulis net −Rp2,11jt di bulan 1. Itu normal.</p>
+<ul><li>Konversi daftar tunggu dulu, sebelum mencari pelanggan baru.</li><li>Dokumentasikan setiap unit yang kembali: kondisi, proses cuci, dan sterilisasi. Konten ini menjadi bahan jualan sekaligus bahan untuk meyakinkan penyelenggara event nanti.</li><li>Catat setiap booking: durasi, SKU, sumber kanal, hari ambil, dan jarak antar.</li><li>Tawarkan laundry ke setiap penyewa stroller dan car seat yang mengembalikan unit.</li><li>Fatin atau satu admin-kurir paruh waktu menangani antar. Overhead tetap Rp2,5jt (estimasi).</li></ul>
+<p>Angka yang dikejar: okupansi 33% atau lebih, dan setengah hari tersewa berasal dari booking 7 hari atau lebih.</p>
+<h3 id="10-4-fase-2-hari-31-60-perbaiki-durasi-bukan-tambah-unit">10.4 Fase 2 (hari 31-60): perbaiki durasi, bukan tambah unit</h3>
+<p>Di fase ini, jumlah booking biasanya naik. Masalahnya, booking pendek akhir pekan cenderung mendominasi. Fase 2 bukan tentang menambah volume. Fase 2 tentang memperpanjang durasi.</p>
+<ul><li>Dorong paket 14 hari dan 3 bulan untuk pompa dan box bayi, sesuai tangga harga bab 8.</li><li>Pakai diskon dalam bentuk hari, bukan rupiah. Diskon hanya berlaku untuk unit yang kalendernya kosong 7 hari ke depan.</li><li>Pastikan gratis ongkir hanya berlaku untuk booking minimal 14 hari.</li><li>Masukkan penitip pertama. Prioritaskan stroller dan car seat titipan, sehingga unit milik bisa dipusatkan ke durasi panjang.</li><li>Mulai dekati satu klinik laktasi atau bidan untuk rujukan pompa pasca-lahir.</li><li>Mulai bicara dengan satu penyelenggara event untuk kuartal berikutnya.</li></ul>
+<p>Larangan fase ini: tidak membeli unit milik baru, berapa pun ramainya akhir pekan.</p>
+<h3 id="10-5-fase-3-hari-61-90-baru-boleh-menambah">10.5 Fase 3 (hari 61-90): baru boleh menambah</h3>
+<p>Penambahan armada di fase ini punya urutan. Titipan selalu didahulukan. Unit milik datang terakhir.</p>
+<ul><li>Okupansi di atas 50% dan porsi booking panjang di atas separuh: tambah titipan sampai 4–6 unit.</li><li>Unit milik baru hanya boleh dibeli kalau okupansi SKU itu sudah 67% atau lebih selama 4 minggu berturut-turut. Itu titik impas. Belilah hanya SKU yang penuh, dan dahulukan pompa.</li><li>Okupansi di bawah 55%: jangan tambah apa pun. Kembali ke perbaikan durasi dan kanal. Ini aturan yang sama dengan rekomendasi riset.</li><li>Jalankan event kecil pertama. Targetnya sekitar Rp2jt gross (estimasi). Tujuannya membuktikan proses, bukan mengejar omzet.</li><li>Siapkan keputusan overhead bulan 4. Orang kedua hanya direkrut kalau pengantaran sudah melewati 6 per orang per hari.</li></ul>
+<h3 id="10-6-yang-diukur-tiap-akhir-fase">10.6 Yang diukur tiap akhir fase</h3>
+<div class="table-wrap"><table><thead><tr><th>Fase</th><th>Target utama</th><th>Angka lulus</th><th>Angka gagal</th><th>Tindakan</th></tr></thead><tbody><tr><td>0</td><td>Permintaan terjangkau</td><td>≥20 daftar tunggu, ≥8 minta ≥7 hari</td><td>&lt;10 daftar tunggu</td><td>Gagal: beli 6 pompa saja, ulang fase 0</td></tr><tr><td>1</td><td>Unit berputar tanpa masalah</td><td>Okupansi ≥33%, nol unit hilang</td><td>Okupansi ≤27% atau ada unit hilang</td><td>Gagal: audit kanal dan verifikasi, tahan biaya</td></tr><tr><td>2</td><td>Durasi memanjang</td><td>≥50% hari tersewa dari booking ≥7 hari, okupansi ≥43%</td><td>&lt;33% dari booking ≥7 hari, okupansi ≤37%</td><td>Gagal: potong overhead, uji harga 7/14 hari ke dekat lantai</td></tr><tr><td>3</td><td>Penambahan yang sehat</td><td>Okupansi ≥50%, ≥4 titipan, 1 event terlaksana</td><td>Okupansi &lt;45%, nol titipan baru</td><td>Lulus: tambah titipan. Gagal: masuk mode bear (9.2)</td></tr><tr><td>3</td><td>Syarat beli unit milik</td><td>SKU ≥67% selama 4 minggu</td><td>SKU &lt;67%</td><td>Lulus: beli SKU itu saja. Gagal: tidak beli</td></tr></tbody></table></div>
+<p>Angka lulus diambil dari jalur base (9.3). Angka gagal diambil dari jalur bear (9.2). Angka di antara keduanya berarti lanjut ke fase berikutnya tanpa menambah apa pun, lalu ukur ulang 2 minggu kemudian.</p>
+</article><article class="chapter" id="ch-11-modal-awal-rincian-belanja-per-item-bukan-angka-bulat"><header class="chapter-head"><span class="chapter-num">11</span><h2>Modal awal: rincian belanja per item, bukan angka bulat</h2></header>
+<p>Angka &quot;Rp35–45jt&quot; di riset adalah rentang. Rentang tidak bisa ditransfer ke rekening. Di bawah ini rinciannya per item, mengikuti komposisi armada yang direkomendasikan riset: 5 pompa ASI, 3 box bayi, 3 travel stroller cabin-size, dan 2 car seat. Totalnya 13 unit.</p>
+<h3 id="11-1-armada">11.1 Armada</h3>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Qty</th><th>Harga satuan</th><th>Subtotal</th><th>Dasar harga</th></tr></thead><tbody><tr><td>Pompa ASI Spectra 9+</td><td>5</td><td>Rp2,19jt</td><td>Rp10,95jt</td><td>Harga beli riset</td></tr><tr><td>Box bayi Babyelle</td><td>3</td><td>Rp1,95jt</td><td>Rp5,85jt</td><td>Harga beli riset</td></tr><tr><td>Travel stroller (kelas Yoyo2/Joie Pact)</td><td>3</td><td>Rp4,6jt</td><td>Rp13,8jt</td><td>Capex di tabel ekonomi unit riset</td></tr><tr><td>Car seat / Doona</td><td>2</td><td>Rp6,6jt</td><td>Rp13,2jt</td><td>Harga beli riset</td></tr><tr><td><strong>Total armada</strong></td><td><strong>13</strong></td><td></td><td><strong>Rp43,8jt (model)</strong></td><td></td></tr></tbody></table></div>
+<p>Rp43,8jt masih masuk rentang riset, tapi sudah di ujung atas. Armada contoh 15 unit bernilai Rp52,5jt di bab 9 adalah versi yang lebih penuh. Selisih 2 unit sebesar Rp8,7jt (model) sebaiknya diisi penitip, bukan dibeli.</p>
+<h3 id="11-2-koreksi-komposisi-box-bayi-jangan-dibeli">11.2 Koreksi komposisi: box bayi jangan dibeli</h3>
+<p>Box bayi punya payback 25 bulan. Rantainya begini. Harga sewanya Rp300rb/bulan dengan 0,8 booking/bulan, sehingga kontribusinya hanya Rp77rb/bulan. Dengan capex Rp1,95jt, butuh 25 bulan untuk balik modal. Barang bayi sudah lama dipakai pelanggan sebelum capex itu kembali.</p>
+<p>Keputusan: box bayi masuk katalog, tapi hanya lewat penitip. Hasilnya, modal armada turun Rp5,85jt menjadi Rp37,95jt (model). Katalog tetap lengkap untuk pelanggan, dan modal Anda terkonsentrasi di SKU dengan payback 8–15 bulan.</p>
+<p>Hal yang sama berlaku untuk bundel mainan bulanan. Kontribusinya negatif. Jangan beli satu pun.</p>
+<h3 id="11-3-non-armada">11.3 Non-armada</h3>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Perkiraan</th><th>Status</th></tr></thead><tbody><tr><td>Alat sterilisasi UV + perlengkapan cuci</td><td>Rp3jt (estimasi)</td><td>Belum diriset, verifikasi di bab 17</td></tr><tr><td>Rak gudang + kemasan antar</td><td>Rp1,5jt (estimasi)</td><td>Belum diriset</td></tr><tr><td>Legalitas badan usaha</td><td>Rp5jt (estimasi)</td><td>Belum diriset</td></tr><tr><td>Sistem inventori awal (kalender + spreadsheet)</td><td>Rp0</td><td>Tools gratis</td></tr><tr><td>Produksi konten</td><td>Rp0 tunai</td><td>Pakai tim yang sudah Anda punya</td></tr></tbody></table></div>
+<p>Legalitas dimasukkan sejak awal karena alasan strategis, bukan administratif. Mamasewa menjadi PT tujuh bulan setelah mulai, lalu memakainya sebagai alat kepercayaan B2B dan pers. Anchor B2B di bab 13 (hotel, klinik) akan menanyakan badan hukum.</p>
+<h3 id="11-4-modal-kerja">11.4 Modal kerja</h3>
+<ul><li><strong>Buffer rugi masa ramp.</strong> Di 12 hari utilisasi, armada 15 unit rugi Rp2,0jt/bulan. Target riset adalah net positif di bulan ke-4. Artinya ada maksimal 3 bulan rugi. Buffernya 3 × Rp2,0jt = Rp6,0jt (model). Biaya gudang (Rp60rb/unit/bulan) dan maintenance (2% capex/bulan) sudah termasuk dalam angka rugi itu, jadi jangan dihitung dua kali.</li><li><strong>Cadangan kehilangan.</strong> Sisihkan setara satu unit termahal, yaitu Rp6,6jt (model). Ini asuransi buatan sendiri sampai polis deposit di bab 12 terbukti jalan.</li></ul>
+<h3 id="11-5-total">11.5 Total</h3>
+<p>Armada Rp37,95jt + non-armada Rp9,5jt + buffer Rp6,0jt + cadangan Rp6,6jt = <strong>Rp60,05jt (model + estimasi)</strong>.</p>
+<p>Cara membaca angka ini: hanya 63% dari total yang menjadi aset produktif. Sisanya adalah biaya untuk bertahan dan dipercaya. Kalau Anda hanya menyiapkan dana untuk armada, Anda akan kehabisan uang di bulan ke-2.</p>
+</article><article class="chapter" id="ch-12-operasi-sop-higiene-kontrak-deposit-kerusakan-kehilang"><header class="chapter-head"><span class="chapter-num">12</span><h2>Operasi: SOP higiene, kontrak, deposit, kerusakan, kehilangan, kapasitas antar</h2></header>
+<h3 id="12-1-higiene-adalah-produk">12.1 Higiene adalah produk</h3>
+<p>Mekanismenya: barang bayi menyentuh kulit dan mulut. Takut kotor adalah alasan utama orang ragu menyewa. Cancan Baby berdiri karena founder-nya kecewa dengan barang sewaan yang kotor, dan &quot;bersih, disterilkan sebelum dikirim&quot; menjadi satu-satunya alasan pelanggan pindah. Review positif di semua pemain juga menyebut hal yang sama.</p>
+<p>Yang memfalsifikasi: kalau setelah 60 hari pelanggan yang closing tidak pernah menyebut kebersihan sebagai alasan, dan konten higiene tidak mengungguli konten lain dalam jumlah DM, berarti higiene hanya syarat minimum, bukan pembeda. Kalau itu terjadi, geser positioning ke kecepatan antar (lihat 12.5).</p>
+<p>SOP per unit setiap kali kembali:</p>
+<ol><li>Inspeksi dan foto kondisi, lalu bandingkan dengan foto saat keluar.</li><li>Bongkar komponen yang bisa dilepas.</li><li>Cuci sesuai bahan. Pompa ASI: semua part yang kontak dengan ASI disterilkan atau diganti.</li><li>Sterilisasi UV.</li><li>Kering, kemas, beri segel tanggal steril.</li><li>Rekam proses dalam video pendek. Video ini sekaligus bahan konten di bab 13.</li></ol>
+<p>Biaya cuci Rp35–50rb/booking sudah masuk ekonomi unit riset. Jangan memotong biaya ini untuk menaikkan margin. Ini biaya positioning.</p>
+<h3 id="12-2-kontrak">12.2 Kontrak</h3>
+<p>Kontrak satu halaman dan dikirim via WA. Isinya:</p>
+<ul><li>Durasi dan tanggal kembali.</li><li>Kondisi barang beserta foto.</li><li>Tarif keterlambatan per hari.</li><li>Definisi rusak ringan, rusak berat, dan hilang, beserta besaran tanggungan.</li><li>Persetujuan pelanggan dalam bentuk balasan &quot;SETUJU&quot; di WA.</li></ul>
+<p>Syarat utamanya: kontrak tidak boleh menambah lebih dari satu langkah di proses closing.</p>
+<h3 id="12-3-deposit-tiering-berdasarkan-nilai-barang">12.3 Deposit: tiering berdasarkan nilai barang</h3>
+<p>Riset menunjukkan dua kutub. Kiddy tanpa deposit. Cancan cukup foto KTP/KK dan deposit Rp100rb. Riset juga mencatat friksi verifikasi sebagai pembunuh konversi. Di sisi lain, satu Doona hilang dengan deposit Rp100rb berarti 66 rental hangus.</p>
+<p>Hitung dari kontribusi, bukan dari omzet. Kontribusi car seat Rp540rb/bulan dari 3 booking berarti Rp180rb per booking (model). Satu unit Rp6,6jt yang hilang butuh sekitar 37 booking untuk ditutup (model). Itu setara satu tahun kontribusi unit tersebut.</p>
+<div class="table-wrap"><table><thead><tr><th>Kelas barang</th><th>Contoh</th><th>Verifikasi</th><th>Deposit</th></tr></thead><tbody><tr><td>Capex &lt; Rp3jt</td><td>Pompa ASI</td><td>KTP + alamat antar</td><td>Rendah atau nol</td></tr><tr><td>Capex Rp3–5jt</td><td>Travel stroller</td><td>KTP + akun IG/WA aktif</td><td>Menengah</td></tr><tr><td>Capex &gt; Rp5jt</td><td>Doona, stroller premium</td><td>KTP + KK + alamat + video call singkat</td><td>Tinggi, atau tanpa deposit untuk pelanggan repeat</td></tr></tbody></table></div>
+<p>Besaran rupiah tiap kelas harus diuji, bukan ditebak. Mulai dari tier ketat. Longgarkan per kelas kalau data konversi menunjukkan deposit menjadi alasan batal (lihat KPI di bab 15).</p>
+<h3 id="12-4-kerusakan-dan-kehilangan">12.4 Kerusakan dan kehilangan</h3>
+<ul><li><strong>Rusak ringan</strong> (noda, part kecil): tanggung sendiri dari anggaran maintenance 2% capex/bulan.</li><li><strong>Rusak berat</strong>: pelanggan menanggung biaya perbaikan sesuai nota bengkel.</li><li><strong>Hilang</strong>: pelanggan menanggung nilai pengganti dikurangi deposit, dicicil bila perlu. Cadangan Rp6,6jt (bab 11) menutup selisih yang tidak tertagih.</li><li><strong>Unit yang sudah balik modal dan aus</strong>: jual sebagai barang eks-sewa, seperti yang dilakukan Babyvizta. Ini lini retail di bab 9.</li></ul>
+<h3 id="12-5-kapasitas-antar">12.5 Kapasitas antar</h3>
+<p>Plafon dari riset: founder yang mengantar sendiri hanya mampu 5–6 pengantaran/hari.</p>
+<p>Kebutuhan riilnya (model):</p>
+<ul><li>Sewa Rp7,5jt/bulan dengan harga mingguan Rp175rb setara sekitar 43 booking/bulan.</li><li>Setiap booking butuh antar dan jemput, jadi 86 perjalanan/bulan.</li><li>Dengan 26 hari kerja, kebutuhannya sekitar 3,3 perjalanan/hari.</li></ul>
+<p>Plafon 5–6/hari × 26 hari = 130–156 perjalanan, atau sekitar 65–78 booking/bulan (model). Artinya armada 15 unit masih aman. Plafon akan tertabrak saat booking naik sekitar 1,5–1,8x, atau saat laundry dan event menambah perjalanan. Begitu rata-rata perjalanan harian menyentuh 5, pindah ke ojek online sebelum menambah unit. Ini urutan yang dilalui Cancan.</p>
+<p>Untuk menyederhanakan, pakai tarif antar flat seperti Mamasewa (Rp25rb). Tarif flat bisa dioperasikan staf non-ahli dan mengurangi tawar-menawar di WA.</p>
+<h3 id="12-6-penitip-50-50-cek-dulu-angkanya">12.6 Penitip 50:50: cek dulu angkanya</h3>
+<p>Ini jebakan yang tidak terlihat di riset. Ambil contoh pompa titipan dengan sewa Rp200rb/minggu dan 3 booking/bulan, sehingga gross Rp600rb.</p>
+<ul><li><strong>Kalau 50:50 dari gross:</strong> Anda dapat Rp300rb. Dikurangi cuci + antar sekitar Rp225rb dan gudang Rp60rb, sisanya sekitar <strong>Rp15rb/bulan (model)</strong>. Anda menanggung semua kerja untuk nyaris nol.</li><li><strong>Kalau 50:50 dari net setelah cuci dan antar:</strong> (Rp600rb − Rp225rb) × 50% = Rp187,5rb, dikurangi gudang Rp60rb, sisa sekitar <strong>Rp127,5rb/bulan (model)</strong>.</li></ul>
+<p>Kontrak penitip wajib memakai skema bagi hasil dari net. Alternatifnya, bebankan antar ke pelanggan.</p>
+</article><article class="chapter" id="ch-13-mesin-akuisisi-konten-autobase-marketplace-b2b-anchor"><header class="chapter-head"><span class="chapter-num">13</span><h2>Mesin akuisisi: konten, autobase, marketplace, B2B anchor</h2></header>
+<p>Target kerjanya sekitar 43 booking/bulan di okupansi breakeven (model, dari 12.5). Setiap kanal di bawah punya satu fungsi, sesuai pola ke-7 riset.</p>
+<h3 id="13-1-konten-ig-tiktok-kanal-closing">13.1 Konten IG/TikTok: kanal closing</h3>
+<p>Mekanismenya: permintaan sewa datang dadakan (&quot;ready hari minggu ini&quot;). Saat orang menemukan Anda, keputusan diambil dalam beberapa jam. Konten tidak berfungsi menciptakan permintaan. Konten berfungsi menghapus keraguan saat permintaan itu muncul.</p>
+<p>Tiga pilar konten:</p>
+<ol><li><strong>Before/after cuci dan sterilisasi.</strong> Diambil dari SOP 12.1, jadi biayanya nol.</li><li><strong>&quot;Cek stok minggu ini&quot;.</strong> Menjawab pertanyaan ketersediaan sebelum ditanyakan.</li><li><strong>Cerita luka founder.</strong> Pola menang nomor 1. Mamasewa membuktikan audiens yang sudah ada sebelum bisnis bisa menjadi mesin distribusi.</li></ol>
+<p>Keunggulan Anda adalah produksi konten. Pakai brand IG yang sudah ada untuk cross-post di 30 hari pertama.</p>
+<p>Yang memfalsifikasi: kalau setelah 60 hari kurang dari separuh booking menyebut IG/TikTok sebagai titik awal, konten tidak sedang menjual. Saat itu, alihkan jam produksi ke autobase dan B2B.</p>
+<h3 id="13-2-autobase-x-dan-grup-fb-lokal-demand-capture">13.2 Autobase X dan grup FB lokal: demand capture</h3>
+<p>Mekanismenya: orang bertanya di autobase daerah dan tidak dijawab. @BaseBDG menanyakan hal yang sama pada 2022 dan 2026. Sementara itu, akun sewa di X sudah mati. Biaya menjawab nol, dan pesaingnya juga nol.</p>
+<p>Rutinitas: pantau kata kunci &quot;sewa stroller&quot;, &quot;sewa box bayi&quot;, dan &quot;sewa pompa ASI&quot; plus nama kota setiap hari. Balas dalam satu jam dengan tautan katalog dan nomor WA.</p>
+<p>Yang memfalsifikasi: kalau dalam 30 hari pertanyaan di autobase kota target kurang dari satu per minggu, volumenya terlalu kecil untuk dijadikan kanal. Pertahankan sebagai sinyal permintaan saja.</p>
+<h3 id="13-3-marketplace-permintaan-tambahan">13.3 Marketplace: permintaan tambahan</h3>
+<p>Riset mencatat 665 listing &quot;sewa mainan&quot; di marketplace, tanda pembeli memang mencari di sana. Pasang SKU yang paling mudah dijelaskan, yaitu pompa ASI mingguan dan stroller weekend. Arahkan pelanggan ke WA untuk jadwal antar.</p>
+<p>Peringatan: marketplace mengandalkan harga. Jangan ikut perang harga di sana (lihat bab 16).</p>
+<h3 id="13-4-b2b-anchor-satu-per-kuartal">13.4 B2B anchor: satu per kuartal</h3>
+<p>Mekanismenya: event memadatkan okupansi armada ke beberapa hari dengan tiket besar. Zaida mendapat sekitar Rp260jt dari 12 hari BBW, setara 8–9 bulan omzet normal. Model bab 9 hanya memasang Rp4jt/bulan dari event, dan riset sendiri menyebut asumsi itu konservatif.</p>
+<p>Urutan target berdasarkan kecocokan alami:</p>
+<ol><li><strong>Klinik laktasi dan rumah sakit bersalin.</strong> Pompa ASI pasca-lahir adalah kanal paling natural, dan pompa adalah SKU dengan payback tercepat.</li><li><strong>Hotel dan villa.</strong> Ini masih gap riset, lihat bab 17.</li><li><strong>Baby fair dan family day kantor.</strong></li></ol>
+<p>Yang memfalsifikasi: kalau dua kuartal berturut-turut tidak ada satu anchor pun yang closing, jangan masukkan aliran event ke proyeksi. Hitung ulang skenario tumpuk tanpa Rp4jt itu (lihat bab 9).</p>
+<h3 id="13-5-pers">13.5 Pers</h3>
+<p>Kiddy dan Mamasewa memakai pers sebagai mesin kredibilitas, bukan iklan. Setelah 3 bulan beroperasi dengan cerita yang jelas (misalnya &quot;kota tier-2 yang 3 tahun tidak punya tempat sewa&quot;), pitch ke media parenting yang sama dengan yang meliput mereka.</p>
+</article><article class="chapter" id="ch-14-organisasi-dan-biaya-tetap-dari-0-sampai-12-bulan"><header class="chapter-head"><span class="chapter-num">14</span><h2>Organisasi dan biaya tetap dari 0 sampai 12 bulan</h2></header>
+<p>Prinsipnya: setiap orang baru harus dibayar dari kontribusi yang sudah ada, bukan dari proyeksi.</p>
+<h3 id="14-1-bulan-0-3-dua-peran-inti">14.1 Bulan 0–3: dua peran inti</h3>
+<p>Zaida berjalan dengan pembagian peran yang tegas sejak hari pertama: marketing + keuangan + CS di satu sisi, gudang + pengiriman di sisi lain. Tiru struktur ini.</p>
+<ul><li><strong>Peran A (Anda + tim konten yang sudah ada):</strong> konten, autobase, closing WA, keuangan.</li><li><strong>Peran B (operator lokal di kota target):</strong> gudang, SOP higiene, antar-jemput.</li></ul>
+<p>Peran B harus orang yang tinggal di kota target. Anda tidak bisa menjalankan kapasitas antar dari jarak jauh.</p>
+<p>Biaya tetap yang sudah dihitung riset: gudang Rp60rb/unit/bulan, yaitu Rp780rb untuk 13 unit (model). Ditambah maintenance 2% capex, sekitar Rp759rb/bulan dari armada Rp37,95jt (model).</p>
+<h3 id="14-2-bulan-4-6-tambah-kapasitas-bukan-kepala">14.2 Bulan 4–6: tambah kapasitas, bukan kepala</h3>
+<p>Pemicunya: rata-rata perjalanan menyentuh 5/hari (12.5). Responnya: ojek online per perjalanan. Biaya ini variabel, bukan tetap. Jangan rekrut kurir tetap selama ojek masih menutup kebutuhan.</p>
+<h3 id="14-3-bulan-7-12-staf-penuh-waktu-pertama">14.3 Bulan 7–12: staf penuh waktu pertama</h3>
+<p>Patokannya adalah net Rp5,7jt/bulan di skenario tumpuk 3 aliran (lihat bab 9). Angka itu adalah plafon total gaji staf tambahan sebelum bisnis kembali ke nol. Staf pertama yang layak adalah yang langsung menambah aliran non-sewa, yaitu laundry atau penjualan B2B, bukan admin.</p>
+<p>Besaran gaji belum diriset untuk kota target (lihat bab 17).</p>
+<h3 id="14-4-yang-tidak-boleh-terjadi">14.4 Yang tidak boleh terjadi</h3>
+<ul><li>Mempekerjakan admin sebelum inventori real-time ada.</li><li>Membuka kota kedua sebelum kota pertama melewati breakeven tiga bulan berturut-turut.</li></ul>
+</article><article class="chapter" id="ch-15-dashboard-kpi-dan-kill-criteria"><header class="chapter-head"><span class="chapter-num">15</span><h2>Dashboard KPI dan kill criteria</h2></header>
+<h3 id="15-1-dashboard-mingguan">15.1 Dashboard mingguan</h3>
+<div class="table-wrap"><table><thead><tr><th>KPI</th><th>Rumus</th><th>Target</th><th>Alasan</th></tr></thead><tbody><tr><td>Okupansi armada</td><td>hari tersewa ÷ hari tersedia</td><td>≥70% dalam 90 hari</td><td>Breakeven 67–71%</td></tr><tr><td>Okupansi per SKU</td><td>sama, per SKU</td><td>Pompa ≥ asumsi 3 booking/bln</td><td>Memisahkan SKU sehat dari yang membebani</td></tr><tr><td>Booking/bulan</td><td>jumlah booking</td><td>±43 (model)</td><td>Turunan sewa Rp7,5jt di bab 9</td></tr><tr><td>Porsi pendapatan non-sewa</td><td>(laundry+retail+event) ÷ total</td><td>Naik tiap kuartal</td><td>Sewa murni rugi di bawah 67%</td></tr><tr><td>Perjalanan/hari</td><td>antar + jemput ÷ hari kerja</td><td>Pemicu di 5</td><td>Plafon kapasitas antar</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>KPI</th><th>Rumus</th><th>Target</th><th>Alasan</th></tr></thead><tbody><tr><td>Sumber booking</td><td>booking per kanal</td><td>Diukur sejak hari 1</td><td>Memfalsifikasi pola di bab 13</td></tr><tr><td>Batal karena deposit</td><td>batal ÷ inquiry, per tier</td><td>Turun</td><td>Menyetel tier di 12.3</td></tr><tr><td>Insiden rusak/hilang</td><td>kasus ÷ booking</td><td>Tercatat per SKU</td><td>Menguji cadangan Rp6,6jt</td></tr><tr><td>Keluhan kebersihan</td><td>kasus ÷ booking</td><td>Nol</td><td>Positioning utama</td></tr><tr><td>Repeat/referral</td><td>booking pelanggan lama ÷ total</td><td>Naik</td><td>Menekan biaya akuisisi</td></tr></tbody></table></div>
+<h3 id="15-2-kill-criteria">15.2 Kill criteria</h3>
+<p>Tulis kriteria ini sebelum uang keluar, lalu jangan dinegosiasi ulang saat sedang rugi.</p>
+<ol><li><strong>Okupansi &lt;55% di bulan ke-3:</strong> stop beli unit. Perbaiki durasi dan kanal. Ini aturan dari riset.</li><li><strong>Belum net positif di bulan ke-6:</strong> pada 16 hari utilisasi, Anda rugi Rp1,1jt/bulan, sehingga buffer Rp6,0jt habis dalam sekitar 5–6 bulan (model). Bulan ke-6 adalah titik uang habis, bukan titik evaluasi. Keputusan: ciutkan armada ke SKU yang balik modal, jual sisanya sebagai eks-sewa.</li><li><strong>SKU dengan okupansi di bawah asumsi ekonomi unit selama 3 bulan:</strong> jual unitnya, jangan ditambah.</li><li><strong>Insiden hilang melebihi cadangan Rp6,6jt:</strong> perketat tier deposit sebelum menambah satu booking pun.</li><li><strong>Porsi non-sewa stagnan di bulan ke-9:</strong> tesis bisnis (monetisasi ulang aset) tidak terbukti di kota ini. Jangan buka kota kedua dengan model yang sama.</li></ol>
+</article><article class="chapter" id="ch-16-risiko-dan-mitigasi-termasuk-risiko-yang-tidak-bisa-di"><header class="chapter-head"><span class="chapter-num">16</span><h2>Risiko dan mitigasi (termasuk risiko yang tidak bisa dimitigasi)</h2></header>
+<h3 id="16-1-bisa-dimitigasi">16.1 Bisa dimitigasi</h3>
+<div class="table-wrap"><table><thead><tr><th>Risiko</th><th>Rantai sebab-akibat</th><th>Mitigasi</th><th>Bukti di riset</th></tr></thead><tbody><tr><td>Okupansi di bawah 67%</td><td>Barang menganggur, biaya tetap jalan, modal kerja habis</td><td>Kill criteria 15.2, beli bertahap</td><td>&quot;Angka yang membunuh 90% pemain kecil&quot;</td></tr><tr><td>Ketergantungan travel</td><td>Penerbangan berhenti, sewa stroller mati</td><td>Bobot armada ke pompa ASI dan kebutuhan rumah</td><td>Cancan hampir mati saat pandemi</td></tr><tr><td>Plafon antar</td><td>Booking naik, antar mentok 5–6/hari, telat, review jelek</td><td>Ojek online di pemicu 5 perjalanan/hari</td><td>Cancan baru naik setelah hire + ojek</td></tr><tr><td>Jaminan tipis</td><td>Satu unit mahal hilang, setahun kontribusi hangus</td><td>Tier deposit + cadangan Rp6,6jt</td><td>66 rental hangus per Doona</td></tr><tr><td>Double booking</td><td>Katalog tanpa inventori real-time, janji tidak terpenuhi</td><td>Satu kalender per unit sejak hari 1</td><td>Pola gagal &quot;katalog tanpa sistem&quot;</td></tr><tr><td>Penitip tidak menguntungkan</td><td>Bagi hasil dari gross menghabiskan margin</td><td>Bagi hasil dari net (12.6)</td><td>Turunan ekonomi unit (model)</td></tr></tbody></table></div>
+<h3 id="16-2-mitigasi-parsial">16.2 Mitigasi parsial</h3>
+<ul><li><strong>Perang harga.</strong> Di Jabodetabek sudah ada 12+ pemain. Di kota tier-2, risiko ini tertunda, tidak hilang. Begitu Anda terbukti laku, pemain Jabodetabek bisa masuk lewat subdomain kota seperti cara Mamasewa berekspansi. Pertahanan Anda adalah kecepatan antar hari yang sama, brand higiene, dan relasi B2B lokal. Ini bukan harga.</li><li><strong>Biaya akuisisi berbayar.</strong> Belum ada data CAC Meta/IG di kategori ini. Kalau konten organik dan autobase tidak cukup, ekonomi unit bab 9 belum memperhitungkan biaya iklan.</li></ul>
+<h3 id="16-3-tidak-bisa-dimitigasi">16.3 Tidak bisa dimitigasi</h3>
+<ul><li><strong>Guncangan sistemik seperti pandemi.</strong> Tidak bisa dicegah. Yang bisa dilakukan hanya bertahan lebih lama. Cancan bertahan lewat marketplace, Kiddy justru naik lewat sewa mainan. Siapkan rencana pivot tertulis, tapi jangan berpura-pura risiko ini hilang.</li><li><strong>Insiden keselamatan pada car seat atau stroller.</strong> Satu kecelakaan yang melibatkan barang sewaan bisa menghancurkan brand higiene dan keselamatan Anda dalam semalam, juga brand IG Anda yang lain. SOP inspeksi menurunkan peluangnya, tapi tidak menghapusnya. Pertimbangkan memisahkan brand bisnis ini dari brand utama Anda.</li><li><strong>Data pasar yang self-reported.</strong> Semua angka omzet pemain berasal dari klaim ke media. Kalau angka itu dibesar-besarkan, benchmark Anda terlalu optimistis. Satu-satunya obat adalah data Anda sendiri di 90 hari pertama.</li><li><strong>Bandwidth founder.</strong> Anda menjalankan beberapa brand. Bisnis ini butuh respons WA dalam hitungan jam karena permintaannya dadakan. Kalau peran A tidak didelegasikan, bisnis ini akan kalah oleh pemain lokal yang lebih lambat tapi selalu membalas.</li></ul>
+</article><article class="chapter" id="ch-17-gap-riset-dan-apa-yang-harus-diverifikasi-sebelum-uang"><header class="chapter-head"><span class="chapter-num">17</span><h2>Gap riset dan apa yang harus diverifikasi sebelum uang keluar</h2></header>
+<p>Urutannya dari yang paling menentukan keputusan.</p>
+<div class="table-wrap"><table><thead><tr><th>Gap</th><th>Kenapa penting</th><th>Cara verifikasi</th><th>Gerbang keputusan</th></tr></thead><tbody><tr><td>Okupansi aktual pemain</td><td>Breakeven 67–71% tidak bisa dibandingkan dengan apa pun</td><td>Pre-order/waitlist di kota target sebelum beli unit</td><td>Waitlist tipis: tunda beli</td></tr><tr><td>Volume pencarian Google per kota</td><td>Bandung dipilih dari 2 post X saja</td><td>Cek volume kata kunci &quot;sewa stroller/pompa ASI/box bayi [kota]&quot; untuk kandidat kota</td><td>Pilih kota dengan volume tertinggi dan supply tipis</td></tr><tr><td>Harga riil per durasi di Mamasewa</td><td>Tabel durasi tidak terbaca lewat fetch</td><td>Tanya langsung sebagai calon pelanggan</td><td>Setel harga mingguan dan paket 3 bulan</td></tr><tr><td>CAC Meta/IG</td><td>Bab 9 belum memuat biaya iklan</td><td>Uji iklan kecil dengan anggaran tetap, ukur biaya per inquiry WA</td><td>CAC melebihi kontribusi per booking: organik saja</td></tr><tr><td>Hotel/villa dan klinik</td><td>Anchor B2B adalah sumber lonjakan laba</td><td>10 percakapan dengan klinik laktasi dan hotel di kota target</td><td>Nol minat: hapus aliran event dari model</td></tr><tr><td>Pemain Bali/hoReCa</td><td>Model alternatif yang belum dilihat</td><td>Desk research</td><td>Hanya relevan bila ekspansi ke kota wisata</td></tr><tr><td>Harga non-armada (UV, rak, legal)</td><td>Rp9,5jt di bab 11 masih estimasi</td><td>Minta 3 penawaran per item</td><td>Ganti estimasi dengan angka riil</td></tr><tr><td>Gaji operator lokal</td><td>Plafon staf di bab 14 belum terisi</td><td>Cek standar upah di kota target</td><td>Gaji melebihi plafon Rp5,7jt: tunda rekrut</td></tr><tr><td>Minat penitip</td><td>Penitip menutup selisih armada dan semua box bayi</td><td>Survei di komunitas ibu lokal dengan skema bagi hasil dari net</td><td>Penitip tidak ada: kurangi katalog, jangan beli box</td></tr><tr><td>Data X lebih dalam</td><td>X Search hanya mengembalikan sebagian post</td><td>Akses X API</td><td>Memperkuat atau membatalkan pilihan kota</td></tr></tbody></table></div>
+<p>Aturan praktisnya: tiga gap pertama dan minat penitip harus terjawab sebelum unit pertama dibeli. Sisanya boleh diverifikasi paralel di 90 hari pertama.</p>
+</article><article class="chapter" id="ch-18-sumber"><header class="chapter-head"><span class="chapter-num">18</span><h2>Sumber</h2></header>
+<p>Semua data eksternal di bab 11–17 berasal dari riset lapangan tertanggal 2026-11-03. Angka berlabel (model) dan (estimasi) adalah hitungan dokumen ini.</p>
+<ul><li>swa.co.id/read/235662 (Zaida Rental, 2019)</li><li>finance.detik.com/solusiukm/d-5362654 (Patta, 2021)</li><li>mediaindonesia.com/ekonomi/448162 (Mamasewa, 2021)</li><li>pressrelease.kontan.co.id (Kiddy, 23-12-2022)</li><li>haibunda.com/parenting/20260309154352 (Kiddy, 2026)</li><li>popmama.com (11 tempat sewa stroller Jabodetabek)</li><li>mommiesdaily.com (10 tempat sewa mainan, Des 2025)</li><li>kasirpintar.co.id/solusi/detail (Cancan Baby, 2022)</li><li>kiddy.id (katalog dan halaman about, live)</li><li>mamasewa.com (katalog dan halaman tentang, live)</li><li>babyvizta.net</li><li>X: @JogjaUpdate, @ngalamfess, @BaseBDG, @FessPonti, @tenpo_png, @bardanslm</li></ul>
+<p>Catatan: angka omzet dan unit pemain bersifat self-reported ke media. Hasil X Search hanya sebagian.</p>
+      <section class="chapter" id="kalkulator">
+        <header class="chapter-head"><span class="chapter-num">19</span><h2>Hitung ulang dengan angkamu</h2></header>
+        <p>Enam rumus di bab 9 dan 10 dijadikan satu alat di bawah. Isi angkamu, hasilnya dihitung ulang saat kamu mengetik. Angka awalnya adalah kasus dasar di dokumen ini — ubah satu per satu dan lihat mana yang paling cepat merusak payback.</p>
+
+        <div class="instrument">
+          <div class="instrument-head">
+            <span class="lab">Alat, bukan ilustrasi</span>
+            <h3>Armada, okupansi, payback</h3>
+            <p>Net dihitung sebagai kas operasional sebelum pajak: tanpa gaji founder, tanpa penyusutan. Capex tidak dipotong di sini karena yang diukur adalah kecepatan balik modal.</p>
+          </div>
+
+          <div class="gi">
+            <div class="grp">Armada &amp; tarif</div>
+            <div class="gi-row three">
+              <div class="field"><label for="in-units">Unit di armada</label><input id="in-units" type="text" inputmode="numeric" value="15"></div>
+              <div class="field"><label for="in-capex">Capex per unit</label><input id="in-capex" type="text" inputmode="numeric" value="3500000"><span class="unit">Rp</span></div>
+              <div class="field"><label for="in-price">Harga per 7 hari</label><input id="in-price" type="text" inputmode="numeric" value="175000"><span class="unit">Rp</span></div>
+            </div>
+            <div class="gi-row one">
+              <div class="field wide"><label for="in-days">Hari tersewa per unit per bulan (dari 30) — variabel okupansi</label><input id="in-days" type="text" inputmode="numeric" value="20"></div>
+            </div>
+          </div>
+          <div class="gi">
+            <div class="grp">Biaya per booking</div>
+            <div class="gi-row two">
+              <div class="field"><label for="in-deliv">Antar-jemput / booking</label><input id="in-deliv" type="text" inputmode="numeric" value="35000"><span class="unit">Rp</span></div>
+              <div class="field"><label for="in-clean">Cuci &amp; steril / booking</label><input id="in-clean" type="text" inputmode="numeric" value="40000"><span class="unit">Rp</span></div>
+            </div>
+          </div>
+          <div class="gi">
+            <div class="grp">Aliran bulanan</div>
+            <div class="gi-row three">
+              <div class="field"><label for="in-fixed">Biaya tetap / bulan</label><input id="in-fixed" type="text" inputmode="numeric" value="3500000"><span class="unit">Rp</span></div>
+              <div class="field"><label for="in-event">Omzet event &amp; B2B / bulan</label><input id="in-event" type="text" inputmode="numeric" value="4000000"><span class="unit">Rp</span></div>
+              <div class="field"><label for="in-laundry">Omzet laundry / servis / bulan</label><input id="in-laundry" type="text" inputmode="numeric" value="1320000"><span class="unit">Rp</span></div>
+            </div>
+            <div class="gi-row two">
+              <div class="field"><label for="in-retail">Margin jual &amp; eks-sewa / bulan</label><input id="in-retail" type="text" inputmode="numeric" value="1500000"><span class="unit">Rp</span></div>
+              <div class="field"><label for="in-other">Biaya variabel lain / bulan</label><input id="in-other" type="text" inputmode="numeric" value="900000"><span class="unit">Rp</span></div>
+            </div>
+          </div>
+          <div class="band-label">Hasil <span>jt = juta · dihitung ulang saat kamu mengetik</span></div>
+          <div class="results">
+            <div class="res"><div class="k">Booking / bulan</div><div class="v" id="out-bookings">–</div></div>
+            <div class="res"><div class="k">Omzet sewa</div><div class="v" id="out-gross">–</div></div>
+            <div class="res"><div class="k">Net / bulan</div><div class="v" id="out-net">–</div></div>
+            <div class="res"><div class="k">Payback armada</div><div class="v" id="out-payback">–</div></div>
+            <div class="res"><div class="k">Breakeven sewa murni</div><div class="v" id="out-be">–</div></div>
+          </div>
+
+          <div class="bar-wrap">
+            <div class="bar"><div class="fill" id="bar-fill" style="width:67%"></div><div class="be" id="bar-be" style="left:67%"></div></div>
+            <div class="bar-legend"><span>0%</span><span id="legend-mid">okupansi kamu · garis = breakeven</span><span>100%</span></div>
+          </div>
+
+          <div class="verdict" id="verdict" data-state="muted">
+            <span class="dot"></span>
+            <span><b id="verdict-lead">Putusan</b><span id="verdict-text"></span><span class="caveat" id="verdict-caveat"></span></span>
+          </div>
+
+          <div class="inst-actions">
+            <button class="btn ghost" id="btn-reset">Kembalikan ke kasus dasar</button>
+            <button class="btn ghost" id="btn-stress" title="Antar-jemput naik ke Rp50rb, okupansi turun ke 14 hari, event nol">Uji guncangan</button>
+            <span class="hint">Semua hitungan jalan lokal, tanpa server.</span>
+          </div>
+        </div>
+
+        <aside class="note">
+          <span class="note-label">Kill</span>
+          <p>Kalau bulan ke-3 okupansi masih di bawah breakeven, jangan tambah unit. Menambah unit di okupansi rendah memperbesar kerugian dengan kecepatan yang sama, bukan memperkecilnya.</p>
+        </aside>
+      </section>
+    </article>
+
+    <footer class="colophon">
+      <p><strong>Dineshcara untuk Fatin.</strong> Dokumen ini disusun 3 November 2026 dari katalog live, artikel pers, dan sinyal permintaan di X. Angka pemain bersifat self-reported ke media; angka berlabel model adalah hitungan sendiri. Versi PDF 37 halaman dan catatan markdown ada di vault <code>knowledge/sewa-babygear/</code>.</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var dec = function(x, d){ return x.toFixed(d).replace(".", ","); };
+  var fmt = function(n){
+    if (!isFinite(n)) return "–";
+    var neg = n < 0; n = Math.abs(Math.round(n));
+    return (neg ? "−" : "") + n.toLocaleString("id-ID");
+  };
+  var rp = function(n){
+    if (!isFinite(n)) return "–";
+    var a = Math.abs(n), s = n < 0 ? "−" : "";
+    if (a >= 1e9) return s + "Rp" + dec(a/1e9, 2) + " M";
+    if (a >= 1e6) return s + "Rp" + dec(a/1e6, 2) + " jt";
+    if (a >= 1e3) return s + "Rp" + Math.round(a/1e3).toLocaleString("id-ID") + " rb";
+    return s + "Rp" + fmt(a);
+  };
+
+  var ids = ["units","capex","price","days","deliv","clean","fixed","event","laundry","retail","other"];
+  var el = {};
+  ids.forEach(function(k){ el[k] = document.getElementById("in-" + k); });
+
+  var BASELINE = {units:15, capex:3500000, price:175000, days:20, deliv:35000, clean:40000,
+                  fixed:3500000, event:4000000, laundry:1320000, retail:1500000, other:900000};
+
+  function read(){
+    var v = {};
+    ids.forEach(function(k){
+      var n = parseFloat(String(el[k].value).replace(/[^0-9]/g, ""));
+      v[k] = isNaN(n) ? 0 : n;
+    });
+    return v;
+  }
+
+  function model(v){
+    var bookings = v.units * v.days / 7;
+    var gross = bookings * v.price;
+    var variable = bookings * (v.deliv + v.clean);
+    var asset = v.units * v.capex * 0.02;
+    var net = gross + v.event + v.laundry + v.retail - variable - asset - v.fixed - v.other;
+    var capex = v.units * v.capex;
+    var payback = net > 0 ? capex / net : Infinity;
+    var perBooking = v.price - v.deliv - v.clean;
+    /* breakeven lapisan sewa saja: sewa harus menutup aset + biaya tetap */
+    var beDays = perBooking > 0
+      ? 7 * (asset + v.fixed) / (v.units * perBooking)
+      : Infinity;
+    var occupancy = v.days / 30 * 100;
+    var beOcc = beDays / 30 * 100;
+    return {bookings:bookings, gross:gross, net:net, payback:payback, beDays:beDays,
+            occupancy:occupancy, beOcc:beOcc};
+  }
+
+  function render(){
+    var v = read();
+    var m = model(v);
+    document.getElementById("out-bookings").textContent = dec(m.bookings, 1);
+    document.getElementById("out-gross").textContent = rp(m.gross);
+    var netEl = document.getElementById("out-net");
+    netEl.textContent = rp(m.net);
+    netEl.style.color = m.net < 0 ? "var(--accent)" : "var(--ink)";
+    document.getElementById("out-payback").innerHTML =
+      isFinite(m.payback) ? dec(m.payback, 1) + "<small> bulan</small>" : "<small>tidak balik</small>";
+    document.getElementById("out-be").innerHTML =
+      isFinite(m.beOcc) && m.beOcc > 0 ? dec(m.beOcc, 0) + "<small>%</small>" : "<small>tak tercapai</small>";
+    document.getElementById("legend-mid").textContent =
+      "okupansi " + dec(m.occupancy, 0) + "% · breakeven " +
+      (isFinite(m.beOcc) && m.beOcc > 0 ? dec(m.beOcc, 0) + "%" : "tak tercapai");
+
+    var fill = Math.max(0, Math.min(100, m.occupancy));
+    var be = Math.max(0, Math.min(100, m.beOcc));
+    document.getElementById("bar-fill").style.width = fill + "%";
+    document.getElementById("bar-be").style.left = be + "%";
+
+    var box = document.getElementById("verdict");
+    var lead = document.getElementById("verdict-lead");
+    var txt = document.getElementById("verdict-text");
+    var caveat = document.getElementById("verdict-caveat");
+    var state, head, body = "";
+    if (m.net <= 0){
+      state = "bad";
+      head = "Berhenti di sini.";
+      body = " Net negatif " + rp(Math.abs(m.net)) + " per bulan. Menambah unit hanya memperbesar kerugian — perbaiki durasi sewa atau biaya antar dulu.";
+    } else if (m.payback > 14){
+      state = "bad";
+      head = "Terlalu lambat.";
+      body = " Net " + rp(m.net) + " per bulan, payback " + dec(m.payback,1) + " bulan — di atas batas 14 bulan untuk ekspansi dari kas.";
+    } else if (m.payback > 9){
+      state = "warn";
+      head = "Masuk akal, belum cukup.";
+      body = " Payback " + dec(m.payback,1) + " bulan. Titik perbaikan terbesar ada di okupansi (" + dec(m.occupancy,0) + "%) dan durasi sewa.";
+    } else {
+      state = "ok";
+      head = "Lulus syarat ekspansi.";
+      body = " Payback " + dec(m.payback,1) + " bulan dengan okupansi " + dec(m.occupancy,0) + "%. Tambah unit dari kas, bukan utang — dan hanya kalau angka ini bertahan dua bulan.";
+    }
+    lead.textContent = head;
+    txt.textContent = body;
+    caveat.textContent = (isFinite(m.beOcc) && m.occupancy < m.beOcc && m.net > 0)
+      ? "Okupansi masih di bawah breakeven sewa murni " + dec(m.beOcc,0) + "%, jadi laba bulan ini bergantung pada event, laundry, dan penjualan."
+      : "";
+    box.dataset.state = state;
+  }
+
+  function group(k){
+    var raw = String(el[k].value).replace(/[^0-9]/g, "");
+    if (raw === "") return;
+    el[k].value = parseInt(raw, 10).toLocaleString("id-ID");
+  }
+  ids.forEach(function(k){
+    el[k].addEventListener("input", render);
+    el[k].addEventListener("blur", function(){ group(k); render(); });
+    el[k].addEventListener("focus", function(){ el[k].select(); });
+  });
+  ids.forEach(group);
+
+  document.getElementById("btn-reset").addEventListener("click", function(){
+    ids.forEach(function(k){ el[k].value = BASELINE[k]; });
+    ids.forEach(group);
+    render();
+  });
+
+  document.getElementById("btn-stress").addEventListener("click", function(){
+    ids.forEach(function(k){ el[k].value = BASELINE[k]; });
+    el.deliv.value = 50000;
+    el.days.value = 14;
+    el.event.value = 0;
+    el.retail.value = 500000;
+    ids.forEach(group);
+    render();
+  });
+
+  render();
+
+  /* ---------- nav: progress, active section, filter ---------- */
+  var bar = document.getElementById("progress");
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+    bar.style.width = (p * 100).toFixed(2) + "%";
+  }
+  addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  var links = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
+  var byId = {};
+  links.forEach(function(a){ byId[a.dataset.target] = a; });
+
+  var targets = links.map(function(a){ return document.getElementById(a.dataset.target); }).filter(Boolean);
+  if ("IntersectionObserver" in window && targets.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(l){ l.classList.remove("active"); });
+        var a = byId[e.target.id];
+        if (a){
+          a.classList.add("active");
+          var r = a.getBoundingClientRect(), rail = document.querySelector(".rail-inner");
+          if (rail && (r.top < 80 || r.bottom > innerHeight - 60)) a.scrollIntoView({block:"nearest"});
+        }
+      });
+    }, {rootMargin:"-15% 0px -75% 0px", threshold:0});
+    targets.forEach(function(t){ io.observe(t); });
+  }
+
+  var filter = document.getElementById("nav-filter");
+  filter.addEventListener("input", function(){
+    var q = filter.value.toLowerCase().trim();
+    links.forEach(function(a){
+      var show = !q || a.textContent.toLowerCase().indexOf(q) > -1;
+      a.style.display = show ? "" : "none";
+    });
+  });
+  addEventListener("keydown", function(e){
+    if (e.key === "/" && document.activeElement !== filter && e.target.tagName !== "INPUT"){
+      e.preventDefault(); openRail(); filter.focus();
+    }
+    if (e.key === "Escape"){ closeRail(); filter.blur(); }
+  });
+
+  /* ---------- mobile drawer ---------- */
+  var rail = document.getElementById("rail"), scrim = document.getElementById("scrim"),
+      btn = document.getElementById("menu-btn");
+  function openRail(){ rail.classList.add("open"); scrim.classList.add("show"); btn.setAttribute("aria-expanded","true"); }
+  function closeRail(){ rail.classList.remove("open"); scrim.classList.remove("show"); btn.setAttribute("aria-expanded","false"); }
+  btn.addEventListener("click", function(){ rail.classList.contains("open") ? closeRail() : openRail(); });
+  scrim.addEventListener("click", closeRail);
+  links.forEach(function(a){ a.addEventListener("click", closeRail); });
+})();
+</script>
+</body>
+</html>
